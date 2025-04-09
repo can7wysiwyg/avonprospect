@@ -1,0 +1,39 @@
+"use client";
+
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState, useMemo } from "react";
+import Link from "next/link";
+import { getSupertoken } from "./AccessToken"; 
+import { userGet } from "@/redux/actions/userAuthAction";
+
+export function UserCheck() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.userRdcr.user);
+  const [usertoken, setUsertoken] = useState(null);
+
+  useEffect(() => {
+    const token = getSupertoken(); 
+    setUsertoken(token);
+
+    if (token) {
+      dispatch(userGet()); 
+    }
+  }, [dispatch]);
+
+
+  
+
+  const AuthInfo = useMemo(() => {
+    switch (user?.role) {
+      case "admin":
+        return <Link className="nav-link" href="/admin">ADMIN</Link>;
+      
+      case "shopper":
+        return <Link className="nav-link" href="/shopper">My Account</Link>;
+      default:
+        return null;
+    }
+  }, [user]);
+
+  return <>{usertoken && AuthInfo}</>;
+}

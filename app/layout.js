@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Script from "next/script";
 import Menu from "./components/menu/Menu";
 import Footer from "./components/pages/Footer";
+import { ReduxProvider } from "@/redux/Provider";
 
 
 
@@ -28,14 +29,21 @@ export default function RootLayout({ children }) {
 
       </head>
       <body>
+      <ReduxProvider>
       <Menu />
         <div className="container">
+         
         {children}
 
 
 <Footer />
 
+
+
         </div>
+
+        </ReduxProvider>
+
 
 
         <Script

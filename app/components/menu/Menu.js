@@ -3,6 +3,9 @@
 import React from 'react'
 import { Search, ShoppingCart, User, Heart } from 'lucide-react';
 import Link from 'next/link';
+import { AuthCheck } from '@/helpers/AuthCheck';
+import { DashboardComp } from '@/helpers/DashboardComp';
+
 
 
 
@@ -184,9 +187,12 @@ export default function Menu() {
                   <li className="nav-item">
                     <Link href="/" className="nav-link active">Home</Link>
                   </li>
+                  <li className="nav-item">
+                <DashboardComp />
+              </li>
                   <li className="nav-item dropdown">
-                    {/* <a className="nav-link dropdown-toggle" role="button" id="pages" data-bs-toggle="dropdown"
-                      aria-expanded="false">Pages</a> */}
+                     <a className="nav-link dropdown-toggle" role="button" id="pages" data-bs-toggle="dropdown"
+                      aria-expanded="false">Pages</a> 
                     <ul className="dropdown-menu" aria-labelledby="pages">
                       <li>
                         <Link href="/" className="dropdown-item">
@@ -211,6 +217,11 @@ export default function Menu() {
                   <li className="nav-item">
                     <Link href="/" className="nav-link">New Arrivals</Link>
                   </li>
+
+                  <li className="nav-item">
+                    <AuthCheck />
+                  </li>
+
                   
                 </ul>
 
