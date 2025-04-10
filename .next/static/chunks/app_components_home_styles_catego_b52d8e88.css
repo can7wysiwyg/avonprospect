@@ -1,0 +1,41 @@
+/* [project]/app/components/home/styles/catego.css [app-client] (css) */
+.categories-item {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: all .3s;
+  padding: 1.5rem 0;
+}
+
+.categories-item:hover {
+  transform: translateY(-5px);
+  color: var(--bs-primary);
+}
+
+.category-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: #9fb3df;
+}
+
+@media (width <= 768px) {
+  .row > .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (width <= 576px) {
+  .row > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/*# sourceMappingURL=app_components_home_styles_catego_b52d8e88.css.map*/

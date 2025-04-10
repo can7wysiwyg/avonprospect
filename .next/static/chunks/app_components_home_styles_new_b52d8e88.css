@@ -1,0 +1,82 @@
+/* [project]/app/components/home/styles/new.css [app-client] (css) */
+#new-arrivals {
+  background-color: #f8f9fa;
+}
+
+.new-arrivals-carousel {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.new-arrivals-carousel .card {
+  border: none;
+  transition: transform .3s;
+  margin-bottom: 20px;
+}
+
+.new-arrivals-carousel .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px #0000001a;
+}
+
+.new-arrivals-carousel .card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.new-arrivals-carousel .card-text {
+  padding-bottom: 1rem;
+}
+
+.new-arrivals-carousel .rating {
+  color: #6c757d;
+  font-size: .9rem;
+}
+
+.new-arrivals-carousel .btn-cart {
+  background-color: #212529;
+  color: #fff;
+  border-radius: 4px;
+  transition: all .3s;
+  text-decoration: none;
+}
+
+.new-arrivals-carousel .btn-cart:hover {
+  background-color: #343a40;
+}
+
+.new-arrivals-carousel .btn-wishlist {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  color: #212529;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.new-arrivals-carousel .btn-wishlist:hover {
+  background-color: #f8f9fa;
+}
+
+.z-1.bg-danger {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.new-arrivals-carousel .swiper-pagination {
+  bottom: 0;
+}
+
+.new-arrivals-carousel .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #adb5bd;
+  opacity: .5;
+}
+
+.new-arrivals-carousel .swiper-pagination-bullet-active {
+  background-color: #212529;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=app_components_home_styles_new_b52d8e88.css.map*/

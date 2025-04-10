@@ -1,0 +1,45 @@
+/* categories item */
+
+
+/* SkincareCategories.css */
+.categories-item {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: all 0.3s ease;
+    padding: 1.5rem 0;
+  }
+  
+  .categories-item:hover {
+    transform: translateY(-5px);
+    color: var(--bs-primary);
+  }
+  
+  .category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: #9FB3DF;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .row > .col {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-bottom: 1.5rem;
+    }
+    
+    .category-icon {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .row > .col {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  

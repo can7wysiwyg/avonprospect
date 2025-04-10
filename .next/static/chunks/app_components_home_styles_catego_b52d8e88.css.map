@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/components/home/styles/catego.css"],"sourcesContent":["/* categories item */\r\n\r\n\r\n/* SkincareCategories.css */\r\n.categories-item {\r\n    text-decoration: none;\r\n    color: #333;\r\n    display: block;\r\n    transition: all 0.3s ease;\r\n    padding: 1.5rem 0;\r\n  }\r\n  \r\n  .categories-item:hover {\r\n    transform: translateY(-5px);\r\n    color: var(--bs-primary);\r\n  }\r\n  \r\n  .category-icon {\r\n    font-size: 3rem;\r\n    margin-bottom: 1rem;\r\n    display: block;\r\n    color: #9FB3DF;\r\n  }\r\n  \r\n  /* Responsive styles */\r\n  @media (max-width: 768px) {\r\n    .row > .col {\r\n      flex: 0 0 50%;\r\n      max-width: 50%;\r\n      margin-bottom: 1.5rem;\r\n    }\r\n    \r\n    .category-icon {\r\n      font-size: 2.5rem;\r\n    }\r\n  }\r\n  \r\n  @media (max-width: 576px) {\r\n    .row > .col {\r\n      flex: 0 0 100%;\r\n      max-width: 100%;\r\n    }\r\n  }\r\n  \r\n  "],"names":[],"mappings":"AAIA;;;;;;;;AAQE;;;;;AAKA;;;;;;;AAQA;EACE;;;;;;EAMA;;;;;AAKF;EACE"}}]
+}

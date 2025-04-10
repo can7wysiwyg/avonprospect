@@ -1,0 +1,54 @@
+/* [project]/app/components/home/styles/slide.css [app-client] (css) */
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.swiper-pagination {
+  position: relative;
+  bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ddd;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--bs-primary);
+}
+
+.secondary-font {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.banner-title {
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  transition: all .3s;
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+@media (width <= 768px) {
+  .banner-title {
+    font-size: 2.5rem !important;
+  }
+
+  .content-wrapper {
+    padding: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/*# sourceMappingURL=app_components_home_styles_slide_b52d8e88.css.map*/

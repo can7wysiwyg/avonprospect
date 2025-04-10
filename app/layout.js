@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Script from "next/script";
 import Menu from "./components/menu/Menu";
-import Footer from "./components/pages/Footer";
+import Footer from "./Footer";
 import { ReduxProvider } from "@/redux/Provider";
 
 

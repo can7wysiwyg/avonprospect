@@ -1,10 +1,11 @@
 'use client'
 
 import React from 'react'
-import { Search, ShoppingCart, User, Heart } from 'lucide-react';
+import { Search, ShoppingCart, User, Heart, Home, ShoppingBasket } from 'lucide-react';
 import Link from 'next/link';
 import { AuthCheck } from '@/helpers/AuthCheck';
 import { DashboardComp } from '@/helpers/DashboardComp';
+import "./styles/menuStyles.css"
 
 
 
@@ -186,13 +187,15 @@ export default function Menu() {
                 <ul className="navbar-nav menu-list list-unstyled d-flex gap-md-3 mb-0">
                   <li className="nav-item">
                     <Link href="/" className="nav-link active">Home</Link>
+                    <Home className="fs-4" />
                   </li>
                   <li className="nav-item">
                 <DashboardComp />
               </li>
                   <li className="nav-item dropdown">
-                     <a className="nav-link dropdown-toggle" role="button" id="pages" data-bs-toggle="dropdown"
-                      aria-expanded="false">Pages</a> 
+                     <Link href="!#" className="nav-link dropdown-toggle" role="button" id="pages" data-bs-toggle="dropdown"
+                      aria-expanded="false">Pages</Link> 
+                      
                     <ul className="dropdown-menu" aria-labelledby="pages">
                       <li>
                         <Link href="/" className="dropdown-item">
@@ -216,10 +219,13 @@ export default function Menu() {
                   </li>
                   <li className="nav-item">
                     <Link href="/" className="nav-link">New Arrivals</Link>
+                    <ShoppingBasket className='fs-4' />
+                    
                   </li>
 
                   <li className="nav-item">
                     <AuthCheck />
+                    <User className="fs-4" />
                   </li>
 
                   

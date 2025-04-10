@@ -1,0 +1,142 @@
+/* [project]/app/components/home/styles/catalogue.css [app-client] (css) */
+.filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all .3s;
+  padding: 5px 0;
+  position: relative;
+}
+
+.filter-button.active {
+  color: var(--bs-primary);
+}
+
+.filter-button.active:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bs-primary);
+}
+
+.filter-button:hover {
+  color: var(--bs-primary);
+}
+
+.card {
+  border: none;
+  transition: all .3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px #0000001a;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  transition: all .3s;
+}
+
+.card-title:hover {
+  color: var(--bs-primary);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: .5rem;
+  font-size: .9rem;
+  color: #666;
+}
+
+.rating iconify-icon {
+  margin-right: 2px;
+}
+
+.btn-cart {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #212529;
+  transition: all .3s;
+}
+
+.btn-cart:hover {
+  background-color: var(--bs-primary);
+  color: #fff;
+  border-color: var(--bs-primary);
+}
+
+.btn-cart.disabled {
+  opacity: .6;
+  cursor: not-allowed;
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.btn-wishlist {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #212529;
+  transition: all .3s;
+}
+
+.btn-wishlist:hover {
+  background-color: #f8f9fa;
+  color: var(--bs-primary);
+}
+
+.out-of-stock img {
+  opacity: .6;
+}
+
+.out-of-stock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffb3;
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.secondary-font {
+  font-weight: 500;
+}
+
+@media (width <= 768px) {
+  .section-header {
+    flex-direction: column;
+  }
+
+  .filter-button {
+    margin-bottom: .5rem;
+  }
+
+  .display-3 {
+    font-size: 2.5rem;
+  }
+}
+
+/*# sourceMappingURL=app_components_home_styles_catalogue_b52d8e88.css.map*/
