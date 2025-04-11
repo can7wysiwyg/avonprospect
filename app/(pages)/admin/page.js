@@ -10,8 +10,33 @@ import {
   DollarSign,
   Home
 } from 'lucide-react'
+import { getProducts } from '@/helpers/core/CoreFuncs'
+
 
 export default function AdminDashboard() {
+  const[products, setProducts] = React.useState([])
+
+
+  React.useEffect(() => {
+
+    const fetchData = async () => {
+          try {
+            
+           const items = await getProducts()
+           if(items ) {
+            setProducts(items.products)
+           }
+
+          
+          } catch (error) {
+            console.log('Error fetching products:', error)
+          } 
+        }
+        fetchData()
+
+
+  }, [])
+
  
   return (
     <Container className="py-4">
@@ -95,7 +120,7 @@ export default function AdminDashboard() {
                 <Card className="text-center h-100">
                   <Card.Body>
                     <Package size={32} className="text-primary mb-2" />
-                    <h3>24</h3>
+                    <h3>{products?.length}</h3>
                     <Card.Text>Total Products</Card.Text>
                   </Card.Body>
                 </Card>
@@ -113,7 +138,7 @@ export default function AdminDashboard() {
                 <Card className="text-center h-100">
                   <Card.Body>
                     <DollarSign size={32} className="text-info mb-2" />
-                    <h3>$4,235</h3>
+                    <h3>MK4004235</h3>
                     <Card.Text>Monthly Revenue</Card.Text>
                   </Card.Body>
                 </Card>

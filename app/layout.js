@@ -1,9 +1,9 @@
  import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Script from "next/script";
-import Menu from "./components/menu/Menu";
 import Footer from "./Footer";
 import { ReduxProvider } from "@/redux/Provider";
+import Menu from "./Menu";
 
 
 

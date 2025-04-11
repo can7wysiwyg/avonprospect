@@ -1,133 +1,78 @@
 'use client'
 import React from 'react'
 import { Container, Row, Col, Card } from 'react-bootstrap'
-import { 
-  Tags, 
-  Package, 
-  Layers, 
-  BarChart2, 
-  ShoppingCart, 
-  DollarSign,
-  Home
+import {
+  PlusSquare,
+  Edit3,
+  Tags,
+  Layers,
+  Upload,
+  Settings,
+  Archive
 } from 'lucide-react'
 
-
 export default function ProductManagement() {
+  const actions = [
+    {
+      icon: <PlusSquare size={24} className="text-success mb-2" />,
+      label: 'Upload New Product',
+      href: '/admin/products/upload'
+    },
+    {
+      icon: <Edit3 size={24} className="text-primary mb-2" />,
+      label: 'Manage Products',
+      href: '/admin/products/manage'
+    },
+    {
+      icon: <Tags size={24} className="text-warning mb-2" />,
+      label: 'Edit Product Categories',
+      href: '/admin/categories'
+    },
+    {
+      icon: <Layers size={24} className="text-danger mb-2" />,
+      label: 'Stock Management',
+      href: '/admin/inventory'
+    },
+    {
+      icon: <Settings size={24} className="text-secondary mb-2" />,
+      label: 'Set Discounts & Pricing',
+      href: '/admin/pricing'
+    },
+    {
+      icon: <Upload size={24} className="text-teal mb-2" />,
+      label: 'Bulk Import Products',
+      href: '/admin/products/import'
+    },
+    {
+      icon: <Archive size={24} className="text-dark mb-2" />,
+      label: 'Archived Products',
+      href: '/admin/products/archived'
+    }
+  ]
+
   return (
-    <>
-
-    <Container className="py-4" style={{marginTop: "30px"}}>
-          <Row>
-            <Col xs={12}>
-              
-            </Col>
-          </Row>
-          
-          <div className="d-flex justify-content-center">
-            <Row className="w-100">
-              <Col xs={12} lg={10} className="mx-auto">
-                <Card className="mb-4">
-                  <Card.Body>
-                    <div className="d-flex align-items-center mb-3">
-                      <Home size={24} className="text-success me-2" />
-                      <Card.Title className="mb-0">Products Management </Card.Title>
-                    </div>
-                    <Row>
-                      <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                        <a href="/admin/categories" className="text-decoration-none">
-                          <div className="p-3 bg-light rounded hover-effect">
-                            <Tags size={24} className="text-primary mb-2" />
-                            <div>Category Management</div>
-                          </div>
-                        </a>
-                      </Col>
-                      <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                        <a href="/admin/products" className="text-decoration-none">
-                          <div className="p-3 bg-light rounded hover-effect">
-                            <Package size={24} className="text-primary mb-2" />
-                            <div>Product Management</div>
-                          </div>
-                        </a>
-                      </Col>
-                      <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                        <a href="/admin/inventory" className="text-decoration-none">
-                          <div className="p-3 bg-light rounded hover-effect">
-                            <Layers size={24} className="text-primary mb-2" />
-                            <div>Inventory Management</div>
-                          </div>
-                        </a>
-                      </Col>
-                      <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                        <a href="/admin/sales" className="text-decoration-none">
-                          <div className="p-3 bg-light rounded hover-effect">
-                            <BarChart2 size={24} className="text-primary mb-2" />
-                            <div>Sales Tracking</div>
-                          </div>
-                        </a>
-                      </Col>
-                      <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                        <a href="/admin/orders" className="text-decoration-none">
-                          <div className="p-3 bg-light rounded hover-effect">
-                            <ShoppingCart size={24} className="text-primary mb-2" />
-                            <div>Order Management</div>
-                          </div>
-                        </a>
-                      </Col>
-                      <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                        <a href="/admin/insights" className="text-decoration-none">
-                          <div className="p-3 bg-light rounded hover-effect">
-                            <DollarSign size={24} className="text-primary mb-2" />
-                            <div>Profit Insights</div>
-                          </div>
-                        </a>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </div>
-    
-          {/* Quick stats section */}
-          <div className="d-flex justify-content-center mt-4">
-            <Row className="w-100">
-              <Col xs={12} lg={10} className="mx-auto">
-                <Row>
-                  <Col md={4} className="mb-4">
-                    <Card className="text-center h-100">
-                      <Card.Body>
-                        <Package size={32} className="text-primary mb-2" />
-                        <h3>24</h3>
-                        <Card.Text>Total Products</Card.Text>
-                      </Card.Body>
-                    </Card>
+    <Container className="py-5">
+      <Row className="justify-content-center">
+        <Col xs={12} lg={10}>
+          <Card className="mb-4 shadow-sm border-0">
+            <Card.Body>
+              <h4 className="mb-4 fw-bold">Product Management</h4>
+              <Row>
+                {actions.map((item, idx) => (
+                  <Col key={idx} xs={6} md={4} lg={3} className="text-center mb-4">
+                    <a href={item.href} className="text-decoration-none">
+                      <div className="p-3 bg-light rounded shadow-sm h-100">
+                        {item.icon}
+                        <div className="fw-medium">{item.label}</div>
+                      </div>
+                    </a>
                   </Col>
-                  <Col md={4} className="mb-4">
-                    <Card className="text-center h-100">
-                      <Card.Body>
-                        <ShoppingCart size={32} className="text-success mb-2" />
-                        <h3>156</h3>
-                        <Card.Text>Total Orders</Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col md={4} className="mb-4">
-                    <Card className="text-center h-100">
-                      <Card.Body>
-                        <DollarSign size={32} className="text-info mb-2" />
-                        <h3>$4,235</h3>
-                        <Card.Text>Monthly Revenue</Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </div>
-        </Container>
-    
-
-
-    </>
+                ))}
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   )
 }
