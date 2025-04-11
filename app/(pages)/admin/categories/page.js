@@ -17,12 +17,12 @@ export default function CategoryManagement() {
     {
       icon: <PlusSquare size={24} className="text-success mb-2" />,
       label: 'New Category',
-      href: '/admin/category/newcategory'
+      href: '/admin/categories/newcategory'
     },
     {
       icon: <Edit3 size={24} className="text-primary mb-2" />,
       label: 'Manage Categories',
-      href: '/admin/category/manage'
+      href: '/admin/categories/manage'
     },
     
     

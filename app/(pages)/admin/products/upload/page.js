@@ -127,7 +127,7 @@ export default function UploadProduct() {
         window.location.href = "/admin/products";
       }, 2000);
     } catch (err) {
-      console.error("Error uploading supplier info:", err);
+      console.error("Error uploading  info:", err);
       setError(
         err.response?.data?.message ||
           "An error occurred while uploading your information"

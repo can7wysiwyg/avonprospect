@@ -1,0 +1,3 @@
+{
+  "/(pages)/admin/categories/newcategory/page": "app/(pages)/admin/categories/newcategory/page.js"
+}
