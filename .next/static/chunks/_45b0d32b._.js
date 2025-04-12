@@ -157,6 +157,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$tag$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Tag$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/tag.js [app-client] (ecmascript) <export default as Tag>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/box.js [app-client] (ecmascript) <export default as Box>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$no$2d$axes$2d$column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chart-no-axes-column.js [app-client] (ecmascript) <export default as BarChart2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$digit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileDigit$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/file-digit.js [app-client] (ecmascript) <export default as FileDigit>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/helpers/ApiUrl.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$AccessToken$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/helpers/AccessToken.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -164,8 +168,12 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
+;
+;
 function AdminProductCatalogue() {
     _s();
+    const usertoken = (0, __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$AccessToken$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSupertoken"])();
     const [products, setProducts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [filteredProducts, setFilteredProducts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [categories, setCategories] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
@@ -176,6 +184,19 @@ function AdminProductCatalogue() {
     const [selectedCategory, setSelectedCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [currentPage, setCurrentPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const [productsPerPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(6);
+    const [data, setData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
+        name: '',
+        price: '',
+        stockQuantity: 0,
+        description: '',
+        category: '',
+        brand: '',
+        inStock: false,
+        isFeatured: false
+    });
+    const [updtBtnLdng, setUpdtBtnLdng] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [currentProductId, setCurrentProductId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AdminProductCatalogue.useEffect": ()=>{
             const fetchData = {
@@ -201,13 +222,15 @@ function AdminProductCatalogue() {
             fetchData();
         }
     }["AdminProductCatalogue.useEffect"], []);
-    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useEffect({
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AdminProductCatalogue.useEffect": ()=>{
             if (typeof document !== 'undefined') {
                 const modals = document.querySelectorAll('.modal');
                 modals.forEach({
                     "AdminProductCatalogue.useEffect": (modalEl)=>{
-                        new bootstrap.Modal(modalEl);
+                        if (!bootstrap.Modal.getInstance(modalEl)) {
+                            new bootstrap.Modal(modalEl);
+                        }
                     }
                 }["AdminProductCatalogue.useEffect"]);
             }
@@ -266,7 +289,6 @@ function AdminProductCatalogue() {
             currency: 'MWK'
         }).format(price);
     };
-    // Format date
     const formatDate = (dateString)=>{
         const options = {
             year: 'numeric',
@@ -274,6 +296,84 @@ function AdminProductCatalogue() {
             day: 'numeric'
         };
         return new Date(dateString).toLocaleDateString('en-US', options);
+    };
+    const handleInputChange = (e)=>{
+        const { name, value } = e.target;
+        setData((prev)=>({
+                ...prev,
+                [name]: value
+            }));
+    };
+    const handleCheckboxChange = (e)=>{
+        const { name, checked } = e.target;
+        setData((prev)=>({
+                ...prev,
+                [name]: checked
+            }));
+    };
+    const handleEditClick = (product)=>{
+        setCurrentProductId(product._id);
+        // Initialize form data with current product values
+        setData({
+            name: product.name || '',
+            price: product.price || '',
+            stockQuantity: product.stockQuantity || 0,
+            description: product.description || '',
+            category: product.category || '',
+            brand: product.brand || '',
+            inStock: product.inStock || false,
+            isFeatured: product.isFeatured || false
+        });
+        setError('') // Clear any previous errors
+        ;
+    };
+    const handleUpdate = async (id)=>{
+        // e.preventDefault()
+        setUpdtBtnLdng(true);
+        setError('');
+        try {
+            if (!currentProductId) {
+                throw new Error('Product ID is missing');
+            }
+            const updatedData = {
+                ...data,
+                productId: currentProductId // Make sure your API expects this field name
+            };
+            const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].put(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ApiUrl"]}/admin/update_product/${id}`, updatedData, {
+                headers: {
+                    Authorization: `Bearer ${usertoken}`,
+                    "Content-Type": "application/json"
+                }
+            });
+            if (response.data.success) {
+                // Update local state
+                const updatedProducts = products.map((p)=>p._id === currentProductId ? {
+                        ...p,
+                        ...data
+                    } : p);
+                setProducts(updatedProducts);
+                setFilteredProducts(filteredProducts.map((p)=>p._id === currentProductId ? {
+                        ...p,
+                        ...data
+                    } : p));
+                alert('Product updated successfully!');
+                // Close the modal
+                if ("TURBOPACK compile-time truthy", 1) {
+                    const modalElement = document.querySelector(`#productModal-${currentProductId}`);
+                    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+                    if (modalInstance) {
+                        modalInstance.hide();
+                    }
+                }
+            } else {
+                throw new Error(response.data.msg || 'Failed to update product');
+            }
+        } catch (err) {
+            setError(err.message || 'An error occurred while updating the product');
+            console.error('Update error:', err);
+        } finally{
+            setUpdtBtnLdng(false);
+        }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Container$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Container$3e$__["Container"], {
         fluid: true,
@@ -291,14 +391,14 @@ function AdminProductCatalogue() {
                                     size: 28
                                 }, void 0, false, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 144,
+                                    lineNumber: 238,
                                     columnNumber: 13
                                 }, this),
                                 "Product Catalogue"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                            lineNumber: 143,
+                            lineNumber: 237,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -306,18 +406,18 @@ function AdminProductCatalogue() {
                             children: "Manage your product inventory"
                         }, void 0, false, {
                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                            lineNumber: 147,
+                            lineNumber: 241,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                    lineNumber: 142,
+                    lineNumber: 236,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                lineNumber: 141,
+                lineNumber: 235,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Card$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Card$3e$__["Card"], {
@@ -340,7 +440,7 @@ function AdminProductCatalogue() {
                                             className: "ps-4 py-2"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 157,
+                                            lineNumber: 251,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
@@ -352,18 +452,18 @@ function AdminProductCatalogue() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 164,
+                                            lineNumber: 258,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 156,
+                                    lineNumber: 250,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                lineNumber: 155,
+                                lineNumber: 249,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -379,7 +479,7 @@ function AdminProductCatalogue() {
                                             children: "All Brands"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 173,
+                                            lineNumber: 267,
                                             columnNumber: 17
                                         }, this),
                                         brands.map((brand)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -387,18 +487,18 @@ function AdminProductCatalogue() {
                                                 children: brand.brandName
                                             }, brand._id, false, {
                                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                lineNumber: 175,
+                                                lineNumber: 269,
                                                 columnNumber: 19
                                             }, this))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 168,
+                                    lineNumber: 262,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                lineNumber: 167,
+                                lineNumber: 261,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -414,7 +514,7 @@ function AdminProductCatalogue() {
                                             children: "All Categories"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 185,
+                                            lineNumber: 279,
                                             columnNumber: 17
                                         }, this),
                                         categories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -422,18 +522,18 @@ function AdminProductCatalogue() {
                                                 children: category.catName
                                             }, category._id, false, {
                                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                lineNumber: 187,
+                                                lineNumber: 281,
                                                 columnNumber: 19
                                             }, this))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 180,
+                                    lineNumber: 274,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                lineNumber: 179,
+                                lineNumber: 273,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Col$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Col$3e$__["Col"], {
@@ -450,35 +550,35 @@ function AdminProductCatalogue() {
                                             className: "me-1"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 197,
+                                            lineNumber: 291,
                                             columnNumber: 17
                                         }, this),
                                         "Reset"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 192,
+                                    lineNumber: 286,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                lineNumber: 191,
+                                lineNumber: 285,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 154,
+                        lineNumber: 248,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                    lineNumber: 153,
+                    lineNumber: 247,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                lineNumber: 152,
+                lineNumber: 246,
                 columnNumber: 7
             }, this),
             loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -492,12 +592,12 @@ function AdminProductCatalogue() {
                             children: "Loading..."
                         }, void 0, false, {
                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                            lineNumber: 209,
+                            lineNumber: 303,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 208,
+                        lineNumber: 302,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -505,13 +605,13 @@ function AdminProductCatalogue() {
                         children: "Loading products..."
                     }, void 0, false, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 211,
+                        lineNumber: 305,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                lineNumber: 207,
+                lineNumber: 301,
                 columnNumber: 9
             }, this) : filteredProducts.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "text-center py-5",
@@ -523,19 +623,19 @@ function AdminProductCatalogue() {
                             className: "text-muted"
                         }, void 0, false, {
                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                            lineNumber: 216,
+                            lineNumber: 310,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 215,
+                        lineNumber: 309,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                         children: "No products found"
                     }, void 0, false, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 218,
+                        lineNumber: 312,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -543,7 +643,7 @@ function AdminProductCatalogue() {
                         children: "Try adjusting your search or filter criteria"
                     }, void 0, false, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 219,
+                        lineNumber: 313,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -552,13 +652,13 @@ function AdminProductCatalogue() {
                         children: "Clear Filters"
                     }, void 0, false, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 220,
+                        lineNumber: 314,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                lineNumber: 214,
+                lineNumber: 308,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
@@ -579,12 +679,12 @@ function AdminProductCatalogue() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 226,
+                                    lineNumber: 320,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                lineNumber: 225,
+                                lineNumber: 319,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -595,45 +695,45 @@ function AdminProductCatalogue() {
                                             children: "Sort by newest"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 230,
+                                            lineNumber: 324,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                             children: "Sort by price: low to high"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 231,
+                                            lineNumber: 325,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                             children: "Sort by price: high to low"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 232,
+                                            lineNumber: 326,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                             children: "Sort by name: A-Z"
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 233,
+                                            lineNumber: 327,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 229,
+                                    lineNumber: 323,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                lineNumber: 228,
+                                lineNumber: 322,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 224,
+                        lineNumber: 318,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Row$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Row$3e$__["Row"], {
@@ -659,7 +759,7 @@ function AdminProductCatalogue() {
                                                     }
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                    lineNumber: 243,
+                                                    lineNumber: 337,
                                                     columnNumber: 21
                                                 }, this),
                                                 product.isFeatured && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -667,7 +767,7 @@ function AdminProductCatalogue() {
                                                     children: "Featured"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                    lineNumber: 254,
+                                                    lineNumber: 348,
                                                     columnNumber: 23
                                                 }, this),
                                                 !product.inStock && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -675,13 +775,13 @@ function AdminProductCatalogue() {
                                                     children: "Out of Stock"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                    lineNumber: 259,
+                                                    lineNumber: 353,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 242,
+                                            lineNumber: 336,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Card$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Card$3e$__["Card"].Body, {
@@ -694,7 +794,7 @@ function AdminProductCatalogue() {
                                                             children: product.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                            lineNumber: 266,
+                                                            lineNumber: 360,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -702,13 +802,13 @@ function AdminProductCatalogue() {
                                                             children: formatPrice(product.price)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                            lineNumber: 267,
+                                                            lineNumber: 361,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                    lineNumber: 265,
+                                                    lineNumber: 359,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -722,14 +822,14 @@ function AdminProductCatalogue() {
                                                                     className: "me-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                    lineNumber: 271,
+                                                                    lineNumber: 366,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 getCategoryName(product.category)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                            lineNumber: 270,
+                                                            lineNumber: 365,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -740,20 +840,46 @@ function AdminProductCatalogue() {
                                                                     className: "me-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                    lineNumber: 275,
+                                                                    lineNumber: 370,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 getBrandName(product.brand)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                            lineNumber: 274,
+                                                            lineNumber: 369,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                    lineNumber: 269,
+                                                    lineNumber: 364,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Card$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Card$3e$__["Card"].Text, {
+                                                    className: "small text-muted",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "fw-bold text-primary",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$digit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileDigit$3e$__["FileDigit"], {
+                                                                size: 14,
+                                                                className: "me-1"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                lineNumber: 377,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            "quantity ",
+                                                            product.stockQuantity
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                        lineNumber: 376,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                    lineNumber: 375,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Card$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Card$3e$__["Card"].Text, {
@@ -761,7 +887,7 @@ function AdminProductCatalogue() {
                                                     children: product.description.length > 100 ? `${product.description.substring(0, 100)}...` : product.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                    lineNumber: 279,
+                                                    lineNumber: 382,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -772,45 +898,46 @@ function AdminProductCatalogue() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                    lineNumber: 284,
+                                                    lineNumber: 387,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 264,
+                                            lineNumber: 358,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Card$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Card$3e$__["Card"].Footer, {
-                                            className: "bg-white border-top-0",
+                                            className: "bg-white border-top-0 text-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "d-flex justify-content-between",
+                                                    className: "d-flex align-items-center",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
                                                         variant: "outline-primary",
                                                         size: "sm",
                                                         className: "d-flex align-items-center",
                                                         "data-bs-toggle": "modal",
                                                         "data-bs-target": `#productModal-${product._id}`,
+                                                        onClick: ()=>handleEditClick(product),
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$pen$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Edit$3e$__["Edit"], {
                                                                 size: 14,
                                                                 className: "me-1"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                lineNumber: 300,
+                                                                lineNumber: 402,
                                                                 columnNumber: 25
                                                             }, this),
-                                                            "Edit"
+                                                            "Manage"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                        lineNumber: 293,
+                                                        lineNumber: 394,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                    lineNumber: 292,
+                                                    lineNumber: 393,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -833,8 +960,8 @@ function AdminProductCatalogue() {
                                                                             children: product.name
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                            lineNumber: 320,
-                                                                            columnNumber: 9
+                                                                            lineNumber: 412,
+                                                                            columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                                             type: "button",
@@ -843,14 +970,14 @@ function AdminProductCatalogue() {
                                                                             "aria-label": "Close"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                            lineNumber: 321,
-                                                                            columnNumber: 9
+                                                                            lineNumber: 413,
+                                                                            columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                    lineNumber: 319,
-                                                                    columnNumber: 7
+                                                                    lineNumber: 411,
+                                                                    columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "modal-body",
@@ -865,13 +992,13 @@ function AdminProductCatalogue() {
                                                                                     className: "img-fluid rounded"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                    lineNumber: 326,
-                                                                                    columnNumber: 13
+                                                                                    lineNumber: 418,
+                                                                                    columnNumber: 33
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                lineNumber: 325,
-                                                                                columnNumber: 11
+                                                                                lineNumber: 417,
+                                                                                columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                 className: "col-md-6",
@@ -884,16 +1011,16 @@ function AdminProductCatalogue() {
                                                                                                 children: formatPrice(product.price)
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                                lineNumber: 334,
-                                                                                                columnNumber: 15
+                                                                                                lineNumber: 426,
+                                                                                                columnNumber: 35
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                                 className: `badge ${product.inStock ? 'bg-success' : 'bg-danger'} mb-2`,
                                                                                                 children: product.inStock ? 'In Stock' : 'Out of Stock'
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                                lineNumber: 335,
-                                                                                                columnNumber: 15
+                                                                                                lineNumber: 427,
+                                                                                                columnNumber: 35
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                                                 className: "text-muted small",
@@ -903,60 +1030,408 @@ function AdminProductCatalogue() {
                                                                                                 ]
                                                                                             }, void 0, true, {
                                                                                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                                lineNumber: 338,
-                                                                                                columnNumber: 15
+                                                                                                lineNumber: 430,
+                                                                                                columnNumber: 35
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                        lineNumber: 333,
-                                                                                        columnNumber: 13
+                                                                                        lineNumber: 425,
+                                                                                        columnNumber: 33
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {}, void 0, false, {
                                                                                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                        lineNumber: 342,
-                                                                                        columnNumber: 13
+                                                                                        lineNumber: 434,
+                                                                                        columnNumber: 33
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                         className: "mb-3",
-                                                                                        children: [
-                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
-                                                                                                className: "fw-bold",
-                                                                                                children: "Description"
-                                                                                            }, void 0, false, {
-                                                                                                fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                                lineNumber: 344,
-                                                                                                columnNumber: 15
-                                                                                            }, this),
-                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                                children: product.description
-                                                                                            }, void 0, false, {
-                                                                                                fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                                lineNumber: 345,
-                                                                                                columnNumber: 15
-                                                                                            }, this)
-                                                                                        ]
-                                                                                    }, void 0, true, {
+                                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                                                                            className: "row g-3",
+                                                                                            onSubmit: ()=>handleUpdate(product._id),
+                                                                                            children: [
+                                                                                                error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-12",
+                                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                        className: "alert alert-danger",
+                                                                                                        role: "alert",
+                                                                                                        children: error
+                                                                                                    }, void 0, false, {
+                                                                                                        fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                        lineNumber: 439,
+                                                                                                        columnNumber: 41
+                                                                                                    }, this)
+                                                                                                }, void 0, false, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 438,
+                                                                                                    columnNumber: 39
+                                                                                                }, this),
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-md-6 mb-3",
+                                                                                                    children: [
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                                                            htmlFor: `productName-${product._id}`,
+                                                                                                            className: "form-label",
+                                                                                                            children: "Product Name"
+                                                                                                        }, void 0, false, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 446,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this),
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                                                            type: "text",
+                                                                                                            className: "form-control",
+                                                                                                            id: `productName-${product._id}`,
+                                                                                                            name: "name",
+                                                                                                            value: data.name,
+                                                                                                            onChange: handleInputChange,
+                                                                                                            required: true
+                                                                                                        }, void 0, false, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 447,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this)
+                                                                                                    ]
+                                                                                                }, void 0, true, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 445,
+                                                                                                    columnNumber: 37
+                                                                                                }, this),
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-md-6 mb-3",
+                                                                                                    children: [
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                                                            htmlFor: `productPrice-${product._id}`,
+                                                                                                            className: "form-label",
+                                                                                                            children: "Price"
+                                                                                                        }, void 0, false, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 459,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this),
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                            className: "input-group",
+                                                                                                            children: [
+                                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                                                    className: "input-group-text",
+                                                                                                                    children: "MWK"
+                                                                                                                }, void 0, false, {
+                                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                    lineNumber: 461,
+                                                                                                                    columnNumber: 41
+                                                                                                                }, this),
+                                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                                                                    type: "number",
+                                                                                                                    className: "form-control",
+                                                                                                                    id: `productPrice-${product._id}`,
+                                                                                                                    name: "price",
+                                                                                                                    value: data.price,
+                                                                                                                    onChange: handleInputChange,
+                                                                                                                    required: true
+                                                                                                                }, void 0, false, {
+                                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                    lineNumber: 462,
+                                                                                                                    columnNumber: 41
+                                                                                                                }, this)
+                                                                                                            ]
+                                                                                                        }, void 0, true, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 460,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this)
+                                                                                                    ]
+                                                                                                }, void 0, true, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 458,
+                                                                                                    columnNumber: 37
+                                                                                                }, this),
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-md-6 mb-3",
+                                                                                                    children: [
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                                                            htmlFor: `productStock-${product._id}`,
+                                                                                                            className: "form-label",
+                                                                                                            children: "Stock Quantity"
+                                                                                                        }, void 0, false, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 475,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this),
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                                                            type: "number",
+                                                                                                            className: "form-control",
+                                                                                                            id: `productStock-${product._id}`,
+                                                                                                            name: "stockQuantity",
+                                                                                                            value: data.stockQuantity,
+                                                                                                            onChange: handleInputChange
+                                                                                                        }, void 0, false, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 476,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this)
+                                                                                                    ]
+                                                                                                }, void 0, true, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 474,
+                                                                                                    columnNumber: 37
+                                                                                                }, this),
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-12 mb-3",
+                                                                                                    children: [
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                                                            htmlFor: `productDescription-${product._id}`,
+                                                                                                            className: "form-label",
+                                                                                                            children: "Description"
+                                                                                                        }, void 0, false, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 487,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this),
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                                                                                            className: "form-control",
+                                                                                                            id: `productDescription-${product._id}`,
+                                                                                                            rows: "4",
+                                                                                                            name: "description",
+                                                                                                            value: data.description,
+                                                                                                            onChange: handleInputChange
+                                                                                                        }, void 0, false, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 488,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this)
+                                                                                                    ]
+                                                                                                }, void 0, true, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 486,
+                                                                                                    columnNumber: 37
+                                                                                                }, this),
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-md-6 mb-3",
+                                                                                                    children: [
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                                                            htmlFor: `productCategory-${product._id}`,
+                                                                                                            className: "form-label",
+                                                                                                            children: "Categories"
+                                                                                                        }, void 0, false, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 499,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this),
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                                                                            className: "form-select",
+                                                                                                            id: `productCategory-${product._id}`,
+                                                                                                            name: "category",
+                                                                                                            value: data.category,
+                                                                                                            onChange: handleInputChange,
+                                                                                                            required: true,
+                                                                                                            children: [
+                                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                                                    value: "",
+                                                                                                                    children: "Choose Category"
+                                                                                                                }, void 0, false, {
+                                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                    lineNumber: 508,
+                                                                                                                    columnNumber: 41
+                                                                                                                }, this),
+                                                                                                                categories?.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                                                        value: category._id,
+                                                                                                                        children: category.catName
+                                                                                                                    }, category._id, false, {
+                                                                                                                        fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                        lineNumber: 510,
+                                                                                                                        columnNumber: 43
+                                                                                                                    }, this))
+                                                                                                            ]
+                                                                                                        }, void 0, true, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 500,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this)
+                                                                                                    ]
+                                                                                                }, void 0, true, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 498,
+                                                                                                    columnNumber: 37
+                                                                                                }, this),
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-md-6 mb-3",
+                                                                                                    children: [
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                                                            htmlFor: `productBrand-${product._id}`,
+                                                                                                            className: "form-label",
+                                                                                                            children: "Brand"
+                                                                                                        }, void 0, false, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 518,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this),
+                                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                                                                            className: "form-select",
+                                                                                                            id: `productBrand-${product._id}`,
+                                                                                                            name: "brand",
+                                                                                                            value: data.brand,
+                                                                                                            onChange: handleInputChange,
+                                                                                                            required: true,
+                                                                                                            children: [
+                                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                                                    value: "",
+                                                                                                                    children: "Choose Brand"
+                                                                                                                }, void 0, false, {
+                                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                    lineNumber: 527,
+                                                                                                                    columnNumber: 41
+                                                                                                                }, this),
+                                                                                                                brands?.map((brand)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                                                                        value: brand._id,
+                                                                                                                        children: brand.brandName
+                                                                                                                    }, brand._id, false, {
+                                                                                                                        fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                        lineNumber: 529,
+                                                                                                                        columnNumber: 43
+                                                                                                                    }, this))
+                                                                                                            ]
+                                                                                                        }, void 0, true, {
+                                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                            lineNumber: 519,
+                                                                                                            columnNumber: 39
+                                                                                                        }, this)
+                                                                                                    ]
+                                                                                                }, void 0, true, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 517,
+                                                                                                    columnNumber: 37
+                                                                                                }, this),
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-md-6 mb-3",
+                                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                        className: "form-check form-switch",
+                                                                                                        children: [
+                                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                                                                className: "form-check-input",
+                                                                                                                type: "checkbox",
+                                                                                                                id: `inStockToggle-${product._id}`,
+                                                                                                                name: "inStock",
+                                                                                                                checked: data.inStock,
+                                                                                                                onChange: handleCheckboxChange
+                                                                                                            }, void 0, false, {
+                                                                                                                fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                lineNumber: 538,
+                                                                                                                columnNumber: 41
+                                                                                                            }, this),
+                                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                                                                className: "form-check-label",
+                                                                                                                htmlFor: `inStockToggle-${product._id}`,
+                                                                                                                children: "In Stock"
+                                                                                                            }, void 0, false, {
+                                                                                                                fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                lineNumber: 546,
+                                                                                                                columnNumber: 41
+                                                                                                            }, this)
+                                                                                                        ]
+                                                                                                    }, void 0, true, {
+                                                                                                        fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                        lineNumber: 537,
+                                                                                                        columnNumber: 39
+                                                                                                    }, this)
+                                                                                                }, void 0, false, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 536,
+                                                                                                    columnNumber: 37
+                                                                                                }, this),
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-md-6 mb-3",
+                                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                        className: "form-check form-switch",
+                                                                                                        children: [
+                                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                                                                className: "form-check-input",
+                                                                                                                type: "checkbox",
+                                                                                                                id: `isFeaturedToggle-${product._id}`,
+                                                                                                                name: "isFeatured",
+                                                                                                                checked: data.isFeatured,
+                                                                                                                onChange: handleCheckboxChange
+                                                                                                            }, void 0, false, {
+                                                                                                                fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                lineNumber: 552,
+                                                                                                                columnNumber: 41
+                                                                                                            }, this),
+                                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                                                                className: "form-check-label",
+                                                                                                                htmlFor: `isFeaturedToggle-${product._id}`,
+                                                                                                                children: "Featured Product"
+                                                                                                            }, void 0, false, {
+                                                                                                                fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                lineNumber: 560,
+                                                                                                                columnNumber: 41
+                                                                                                            }, this)
+                                                                                                        ]
+                                                                                                    }, void 0, true, {
+                                                                                                        fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                        lineNumber: 551,
+                                                                                                        columnNumber: 39
+                                                                                                    }, this)
+                                                                                                }, void 0, false, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 550,
+                                                                                                    columnNumber: 37
+                                                                                                }, this),
+                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                    className: "col-12 mt-4",
+                                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                                        type: "submit",
+                                                                                                        className: "btn btn-primary",
+                                                                                                        disabled: updtBtnLdng,
+                                                                                                        children: updtBtnLdng ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                                                                            children: [
+                                                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                                                    className: "spinner-border spinner-border-sm me-2",
+                                                                                                                    role: "status",
+                                                                                                                    "aria-hidden": "true"
+                                                                                                                }, void 0, false, {
+                                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                                    lineNumber: 572,
+                                                                                                                    columnNumber: 45
+                                                                                                                }, this),
+                                                                                                                "Updating..."
+                                                                                                            ]
+                                                                                                        }, void 0, true) : 'Update Product'
+                                                                                                    }, void 0, false, {
+                                                                                                        fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                        lineNumber: 565,
+                                                                                                        columnNumber: 39
+                                                                                                    }, this)
+                                                                                                }, void 0, false, {
+                                                                                                    fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                                    lineNumber: 564,
+                                                                                                    columnNumber: 37
+                                                                                                }, this)
+                                                                                            ]
+                                                                                        }, void 0, true, {
+                                                                                            fileName: "[project]/app/(pages)/admin/products/manage/page.js",
+                                                                                            lineNumber: 436,
+                                                                                            columnNumber: 35
+                                                                                        }, this)
+                                                                                    }, void 0, false, {
                                                                                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                        lineNumber: 343,
-                                                                                        columnNumber: 13
+                                                                                        lineNumber: 435,
+                                                                                        columnNumber: 33
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                                lineNumber: 332,
-                                                                                columnNumber: 11
+                                                                                lineNumber: 424,
+                                                                                columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                        lineNumber: 324,
-                                                                        columnNumber: 9
+                                                                        lineNumber: 416,
+                                                                        columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                    lineNumber: 323,
-                                                                    columnNumber: 7
+                                                                    lineNumber: 415,
+                                                                    columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "modal-footer",
@@ -967,50 +1442,50 @@ function AdminProductCatalogue() {
                                                                         children: "Close"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                        lineNumber: 353,
-                                                                        columnNumber: 9
+                                                                        lineNumber: 584,
+                                                                        columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                                    lineNumber: 352,
-                                                                    columnNumber: 7
+                                                                    lineNumber: 583,
+                                                                    columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                            lineNumber: 318,
-                                                            columnNumber: 5
+                                                            lineNumber: 410,
+                                                            columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                        lineNumber: 317,
-                                                        columnNumber: 3
+                                                        lineNumber: 409,
+                                                        columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                                    lineNumber: 316,
-                                                    columnNumber: 1
+                                                    lineNumber: 408,
+                                                    columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                            lineNumber: 289,
+                                            lineNumber: 392,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 241,
+                                    lineNumber: 335,
                                     columnNumber: 17
                                 }, this)
                             }, product._id, false, {
                                 fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                lineNumber: 240,
+                                lineNumber: 334,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 238,
+                        lineNumber: 332,
                         columnNumber: 11
                     }, this),
                     totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1022,7 +1497,7 @@ function AdminProductCatalogue() {
                                     disabled: currentPage === 1
                                 }, void 0, false, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 374,
+                                    lineNumber: 599,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Pagination$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Pagination$3e$__["Pagination"].Prev, {
@@ -1030,16 +1505,12 @@ function AdminProductCatalogue() {
                                     disabled: currentPage === 1
                                 }, void 0, false, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 378,
+                                    lineNumber: 603,
                                     columnNumber: 17
                                 }, this),
                                 Array.from({
                                     length: Math.min(5, totalPages)
                                 }, (_, i)=>{
-                                    // If totalPages <= 5, show all pages
-                                    // If currentPage <= 3, show pages 1-5
-                                    // If currentPage >= totalPages-2, show last 5 pages
-                                    // Otherwise show currentPage-2 to currentPage+2
                                     let pageNum;
                                     if (totalPages <= 5) {
                                         pageNum = i + 1;
@@ -1056,7 +1527,7 @@ function AdminProductCatalogue() {
                                         children: pageNum
                                     }, pageNum, false, {
                                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                        lineNumber: 400,
+                                        lineNumber: 621,
                                         columnNumber: 21
                                     }, this);
                                 }),
@@ -1065,7 +1536,7 @@ function AdminProductCatalogue() {
                                     disabled: currentPage === totalPages
                                 }, void 0, false, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 410,
+                                    lineNumber: 631,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Pagination$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Pagination$3e$__["Pagination"].Last, {
@@ -1073,18 +1544,18 @@ function AdminProductCatalogue() {
                                     disabled: currentPage === totalPages
                                 }, void 0, false, {
                                     fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                                    lineNumber: 414,
+                                    lineNumber: 635,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                            lineNumber: 373,
+                            lineNumber: 598,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-                        lineNumber: 372,
+                        lineNumber: 597,
                         columnNumber: 13
                     }, this)
                 ]
@@ -1092,11 +1563,11 @@ function AdminProductCatalogue() {
         ]
     }, void 0, true, {
         fileName: "[project]/app/(pages)/admin/products/manage/page.js",
-        lineNumber: 140,
+        lineNumber: 234,
         columnNumber: 5
     }, this);
 }
-_s(AdminProductCatalogue, "97nY8oDcZVGRyQq5QMuUyLZvVR4=");
+_s(AdminProductCatalogue, "exrcetYhwmBzDRKlQfqLg4B2vj4=");
 _c = AdminProductCatalogue;
 var _c;
 __turbopack_context__.k.register(_c, "AdminProductCatalogue");
