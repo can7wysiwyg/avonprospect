@@ -39,6 +39,18 @@ export default function AdminProductCatalogue() {
     fetchData()
   }, [])
 
+
+   React.useEffect(() => {
+    
+      if (typeof document !== 'undefined') {
+        const modals = document.querySelectorAll('.modal')
+        modals.forEach(modalEl => {
+          new bootstrap.Modal(modalEl)
+        })
+      }
+    }, [])
+  
+
   
   const getBrandName = (brandId) => {
     const brand = brands.find(b => b._id === brandId)
@@ -273,28 +285,85 @@ export default function AdminProductCatalogue() {
                       Added: {formatDate(product.createdAt)}
                     </div>
                   </Card.Body>
+
                   <Card.Footer className="bg-white border-top-0">
+
+
                     <div className="d-flex justify-content-between">
                       <Button 
                         variant="outline-primary" 
                         size="sm"
                         className="d-flex align-items-center"
+                        data-bs-toggle="modal" 
+                        data-bs-target={`#productModal-${product._id}`}
                       >
                         <Edit size={14} className="me-1" />
                         Edit
                       </Button>
-                      <Button 
+
+                      {/* <Button 
                         variant="outline-danger" 
                         size="sm"
                         className="d-flex align-items-center"
                       >
                         <Trash2 size={14} className="me-1" />
                         Delete
-                      </Button>
+                      </Button> */}
                     </div>
+
+{/* modak */}
+
+<div className="modal fade" id={`productModal-${product._id}`} tabIndex="-1" aria-labelledby={`productModalLabel-${product._id}`} aria-hidden="true">
+  <div className="modal-dialog modal-lg">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id={`productModalLabel-${product._id}`}>{product.name}</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+        <div className="row">
+          <div className="col-md-6 mb-3 mb-md-0">
+            <img 
+              src={product.photo || '/placeholder.jpg'} 
+              alt={product.name}
+              className="img-fluid rounded"
+            />
+          </div>
+          <div className="col-md-6">
+            <div className="mb-3">
+              <h4 className="fw-bold">{formatPrice(product.price)}</h4>
+              <span className={`badge ${product.inStock ? 'bg-success' : 'bg-danger'} mb-2`}>
+                {product.inStock ? 'In Stock' : 'Out of Stock'}
+              </span>
+              <p className="text-muted small">
+                Category: {categories.find(b => b._id === product.category)?.catName || 'Unknown'}
+              </p>
+            </div>
+            <hr />
+            <div className="mb-3">
+              <h6 className="fw-bold">Description</h6>
+              <p>{product.description}</p>
+          
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{/* end modal */}
+
                   </Card.Footer>
                 </Card>
               </Col>
+
+
             ))}
           </Row>
 
