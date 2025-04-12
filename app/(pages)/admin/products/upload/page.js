@@ -20,7 +20,8 @@ export default function UploadProduct() {
     category: "",
     price: 0,
     brand: "",
-    description: ""
+    description: "",
+    stockQuantity: ""
   });
   const [photo, setPhoto] = React.useState(null);
   const [categories, setCategories] = React.useState([]);
@@ -94,6 +95,13 @@ export default function UploadProduct() {
         return;
       }
 
+      if (!data.stockQuantity) {
+        setError("Stock Quantity cannot be blank");
+        setLoading(false);
+        return;
+      }
+
+
 
     if (!photo) {
       setError("Please select a photo");
@@ -106,6 +114,7 @@ export default function UploadProduct() {
     formData.append("category", data.category);
     formData.append("brand", data.brand);
     formData.append("description", data.description);
+    formData.append("stockQuantity", data.stockQuantity);
     formData.append("price", data.price);
     formData.append("photo", photo);
 
@@ -229,6 +238,20 @@ export default function UploadProduct() {
                   required
                 />
               </Form.Group>
+
+
+              <Form.Group className="mb-3" controlId="formBasicProductName">
+                <Form.Label>Product Quantity</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="stockQuantity"
+                  value={data.stockQuantity}
+                  onChange={handleInputChange}
+                  placeholder="your product stock quantity"
+                  required
+                />
+              </Form.Group>
+
 
               <Form.Group className="mb-3" controlId="formBasicCategory">
                 <Form.Label>Product Category</Form.Label>
