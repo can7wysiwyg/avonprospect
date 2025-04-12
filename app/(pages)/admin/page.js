@@ -8,9 +8,11 @@ import {
   BarChart2, 
   ShoppingCart, 
   DollarSign,
-  Home
+  Home,
+  GroupIcon
 } from 'lucide-react'
 import { getProducts } from '@/helpers/core/CoreFuncs'
+import Link from 'next/link'
 
 
 export default function AdminDashboard() {
@@ -57,54 +59,42 @@ export default function AdminDashboard() {
                 </div>
                 <Row>
                   <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                    <a href="/admin/categories" className="text-decoration-none">
+                    <Link href="/admin/categories" className="text-decoration-none">
                       <div className="p-3 bg-light rounded hover-effect">
                         <Tags size={24} className="text-primary mb-2" />
                         <div>Category Management</div>
                       </div>
-                    </a>
+                    </Link>
                   </Col>
+
                   <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                    <a href="/admin/products" className="text-decoration-none">
+                    <Link href="/admin/brands" className="text-decoration-none">
+                      <div className="p-3 bg-light rounded hover-effect">
+                        <GroupIcon size={24} className="text-primary mb-2" />
+                        <div>Brand Management</div>
+                      </div>
+                    </Link>
+                  </Col>
+
+                  <Col xs={6} md={4} lg={3} className="text-center mb-3">
+                    <Link href="/admin/products" className="text-decoration-none">
                       <div className="p-3 bg-light rounded hover-effect">
                         <Package size={24} className="text-primary mb-2" />
-                        <div>Product Management</div>
+                        <div>Product/Inventory Management</div>
                       </div>
-                    </a>
+                    </Link>
                   </Col>
+
+                  
                   <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                    <a href="/admin/inventory" className="text-decoration-none">
-                      <div className="p-3 bg-light rounded hover-effect">
-                        <Layers size={24} className="text-primary mb-2" />
-                        <div>Inventory Management</div>
-                      </div>
-                    </a>
-                  </Col>
-                  <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                    <a href="/admin/sales" className="text-decoration-none">
-                      <div className="p-3 bg-light rounded hover-effect">
-                        <BarChart2 size={24} className="text-primary mb-2" />
-                        <div>Sales Tracking</div>
-                      </div>
-                    </a>
-                  </Col>
-                  <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                    <a href="/admin/orders" className="text-decoration-none">
+                    <Link href="/admin/orders" className="text-decoration-none">
                       <div className="p-3 bg-light rounded hover-effect">
                         <ShoppingCart size={24} className="text-primary mb-2" />
                         <div>Order Management</div>
                       </div>
-                    </a>
+                    </Link>
                   </Col>
-                  <Col xs={6} md={4} lg={3} className="text-center mb-3">
-                    <a href="/admin/insights" className="text-decoration-none">
-                      <div className="p-3 bg-light rounded hover-effect">
-                        <DollarSign size={24} className="text-primary mb-2" />
-                        <div>Profit Insights</div>
-                      </div>
-                    </a>
-                  </Col>
-                </Row>
+                                  </Row>
               </Card.Body>
             </Card>
           </Col>
@@ -134,15 +124,7 @@ export default function AdminDashboard() {
                   </Card.Body>
                 </Card>
               </Col>
-              <Col md={4} className="mb-4">
-                <Card className="text-center h-100">
-                  <Card.Body>
-                    <DollarSign size={32} className="text-info mb-2" />
-                    <h3>MK4004235</h3>
-                    <Card.Text>Monthly Revenue</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
+              
             </Row>
           </Col>
         </Row>

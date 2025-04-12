@@ -6,8 +6,12 @@ module.exports = {
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "getBrand": (()=>getBrand),
     "getBrands": (()=>getBrands),
     "getCategories": (()=>getCategories),
+    "getCategory": (()=>getCategory),
+    "getProductByBrand": (()=>getProductByBrand),
+    "getProductByCat": (()=>getProductByCat),
     "getProducts": (()=>getProducts)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/helpers/ApiUrl.js [app-ssr] (ecmascript)");
@@ -47,6 +51,70 @@ async function getBrands() {
 async function getProducts() {
     try {
         const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/all_products`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching products:', error);
+    }
+}
+async function getProductByCat(category) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/products_by_category/${category}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching products:', error);
+    }
+}
+async function getProductByBrand(brand) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/products_by_brand/${brand}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching products:', error);
+    }
+}
+async function getCategory(catId) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/category/${catId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching products:', error);
+    }
+}
+async function getBrand(brandId) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/brand_single/${brandId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -278,7 +346,7 @@ function CategoriesPage() {
                 children: filteredCategories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "col",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                            href: `/admin/categories/${category._id}`,
+                            href: `/admin/categories/manage/${category._id}`,
                             className: "text-decoration-none",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "card h-100 border-0 shadow-sm hover-shadow",

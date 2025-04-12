@@ -1,11 +1,13 @@
 {
+  "/(pages)/admin/brands/manage/[products]/page": "app/(pages)/admin/brands/manage/[products]/page.js",
+  "/(pages)/admin/brands/manage/page": "app/(pages)/admin/brands/manage/page.js",
+  "/(pages)/admin/brands/newbrand/page": "app/(pages)/admin/brands/newbrand/page.js",
+  "/(pages)/admin/brands/page": "app/(pages)/admin/brands/page.js",
+  "/(pages)/admin/categories/manage/[products]/page": "app/(pages)/admin/categories/manage/[products]/page.js",
   "/(pages)/admin/categories/manage/page": "app/(pages)/admin/categories/manage/page.js",
-  "/(pages)/admin/categories/newcategory/page": "app/(pages)/admin/categories/newcategory/page.js",
-  "/(pages)/admin/categories/page": "app/(pages)/admin/categories/page.js",
   "/(pages)/admin/page": "app/(pages)/admin/page.js",
   "/(pages)/admin/products/manage/page": "app/(pages)/admin/products/manage/page.js",
   "/(pages)/admin/products/page": "app/(pages)/admin/products/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

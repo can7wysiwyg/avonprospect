@@ -6,8 +6,12 @@ module.exports = {
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
+    "getBrand": (()=>getBrand),
     "getBrands": (()=>getBrands),
     "getCategories": (()=>getCategories),
+    "getCategory": (()=>getCategory),
+    "getProductByBrand": (()=>getProductByBrand),
+    "getProductByCat": (()=>getProductByCat),
     "getProducts": (()=>getProducts)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/helpers/ApiUrl.js [app-ssr] (ecmascript)");
@@ -47,6 +51,70 @@ async function getBrands() {
 async function getProducts() {
     try {
         const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/all_products`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching products:', error);
+    }
+}
+async function getProductByCat(category) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/products_by_category/${category}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching products:', error);
+    }
+}
+async function getProductByBrand(brand) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/products_by_brand/${brand}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching products:', error);
+    }
+}
+async function getCategory(catId) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/category/${catId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching products:', error);
+    }
+}
+async function getBrand(brandId) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/brand_single/${brandId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

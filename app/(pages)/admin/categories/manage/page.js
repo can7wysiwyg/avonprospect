@@ -115,7 +115,7 @@ export default function CategoriesPage() {
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           {filteredCategories.map(category => (
             <div className="col" key={category._id}>
-              <Link href={`/admin/categories/${category._id}`} className="text-decoration-none">
+              <Link href={`/admin/categories/manage/${category._id}`} className="text-decoration-none">
                 <div className="card h-100 border-0 shadow-sm hover-shadow">
                   <div className="card-body p-4">
                     <h3 className="card-title h5 mb-3">{category.catName}</h3>
