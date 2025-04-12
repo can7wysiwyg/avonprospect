@@ -8,6 +8,7 @@ import { Search, Filter, RefreshCw, Edit, Trash2, Tag, Box, BarChart2, FileDigit
 import { ApiUrl } from '@/helpers/ApiUrl'
 import { getSupertoken } from '@/helpers/AccessToken'
 import axios from 'axios'
+import Link from 'next/link'
 
 export default function AdminProductCatalogue() {
   const usertoken = getSupertoken()
@@ -416,7 +417,7 @@ export default function AdminProductCatalogue() {
                             <div className="row">
                               <div className="col-md-6 mb-3 mb-md-0">
                                 <img 
-                                  src={product.photo || '/placeholder.jpg'} 
+                                  src={product.photo } 
                                   alt={product.name}
                                   className="img-fluid rounded"
                                 />
@@ -430,7 +431,16 @@ export default function AdminProductCatalogue() {
                                   <p className="text-muted small">
                                     Category: {categories.find(b => b._id === product.category)?.catName || 'Unknown'}
                                   </p>
+                                
+                                <div>
+                                    
+                                <p className="text-muted small"> <Link href={`/admin/products/manage/${product._id}`}>click here for more features</Link> </p>
+
                                 </div>
+
+                                </div>
+
+                                   
                                 <hr />
                                 <div className="mb-3">
                                   <form className="row g-3" onSubmit={() => handleUpdate(product._id)}>
@@ -644,3 +654,4 @@ export default function AdminProductCatalogue() {
     </Container>
   )
 }
+
