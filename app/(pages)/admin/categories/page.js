@@ -4,11 +4,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap'
 import {
   PlusSquare,
   Edit3,
-  Tags,
-  Layers,
-  Upload,
-  Settings,
-  Archive
+  
 } from 'lucide-react'
 import Link from 'next/link'
 

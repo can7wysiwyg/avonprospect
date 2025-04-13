@@ -311,6 +311,7 @@ export default function AdminProductCatalogue() {
             <Filter size={48} className="text-muted" />
           </div>
           <h4>No products found</h4>
+          
           <p className="text-muted">Try adjusting your search or filter criteria</p>
           <Button variant="primary" onClick={resetFilters}>Clear Filters</Button>
         </div>

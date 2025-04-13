@@ -10,6 +10,7 @@ __turbopack_context__.s({
     "getBrands": (()=>getBrands),
     "getCategories": (()=>getCategories),
     "getCategory": (()=>getCategory),
+    "getProduct": (()=>getProduct),
     "getProductByBrand": (()=>getProductByBrand),
     "getProductByCat": (()=>getProductByCat),
     "getProducts": (()=>getProducts)
@@ -126,6 +127,22 @@ async function getBrand(brandId) {
         return await response.json();
     } catch (error) {
         console.log('Error fetching products:', error);
+    }
+}
+async function getProduct(id) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/product_single/${id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': `application/json`
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching product:', error);
     }
 }
 }}),

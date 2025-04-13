@@ -182,3 +182,31 @@ export async function getBrand(brandId) {
         
     }
 }
+
+
+export async function getProduct(id) {
+
+    try {
+
+        const response = await fetch(`${ApiUrl}/public/product_single/${id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': `application/json`
+            }
+        })
+
+
+        if(!response.ok) {
+            throw new Error('Server Error ')
+        }
+        
+
+        return await response.json()
+
+        
+    } catch (error) {
+
+        console.log('Error fetching product:', error)
+        
+    } 
+}
