@@ -13,7 +13,40 @@
     }
   ],
   "headers": [],
-  "dynamicRoutes": [],
+  "dynamicRoutes": [
+    {
+      "page": "/admin/brands/manage/[products]",
+      "regex": "^/admin/brands/manage/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPproducts": "nxtPproducts"
+      },
+      "namedRegex": "^/admin/brands/manage/(?<nxtPproducts>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/admin/categories/manage/[products]",
+      "regex": "^/admin/categories/manage/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPproducts": "nxtPproducts"
+      },
+      "namedRegex": "^/admin/categories/manage/(?<nxtPproducts>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/admin/products/manage/[manage]",
+      "regex": "^/admin/products/manage/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPmanage": "nxtPmanage"
+      },
+      "namedRegex": "^/admin/products/manage/(?<nxtPmanage>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/reset/[usertoken]",
+      "regex": "^/reset/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPusertoken": "nxtPusertoken"
+      },
+      "namedRegex": "^/reset/(?<nxtPusertoken>[^/]+?)(?:/)?$"
+    }
+  ],
   "staticRoutes": [
     {
       "page": "/",
@@ -28,10 +61,88 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/admin/brands",
+      "regex": "^/admin/brands(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/brands(?:/)?$"
+    },
+    {
+      "page": "/admin/brands/manage",
+      "regex": "^/admin/brands/manage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/brands/manage(?:/)?$"
+    },
+    {
+      "page": "/admin/brands/newbrand",
+      "regex": "^/admin/brands/newbrand(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/brands/newbrand(?:/)?$"
+    },
+    {
+      "page": "/admin/categories",
+      "regex": "^/admin/categories(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/categories(?:/)?$"
+    },
+    {
+      "page": "/admin/categories/manage",
+      "regex": "^/admin/categories/manage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/categories/manage(?:/)?$"
+    },
+    {
+      "page": "/admin/categories/newcategory",
+      "regex": "^/admin/categories/newcategory(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/categories/newcategory(?:/)?$"
+    },
+    {
+      "page": "/admin/products",
+      "regex": "^/admin/products(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/products(?:/)?$"
+    },
+    {
+      "page": "/admin/products/manage",
+      "regex": "^/admin/products/manage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/products/manage(?:/)?$"
+    },
+    {
+      "page": "/admin/products/upload",
+      "regex": "^/admin/products/upload(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/products/upload(?:/)?$"
+    },
+    {
       "page": "/favicon.ico",
       "regex": "^/favicon\\.ico(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/recover",
+      "regex": "^/recover(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/recover(?:/)?$"
+    },
+    {
+      "page": "/register",
+      "regex": "^/register(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/register(?:/)?$"
     }
   ],
   "dataRoutes": [],

@@ -49,7 +49,9 @@
       "path": "/_next/image",
       "loader": "default",
       "loaderFile": "",
-      "domains": [],
+      "domains": [
+        "res.cloudinary.com"
+      ],
       "disableStaticImages": false,
       "minimumCacheTTL": 60,
       "formats": [
@@ -80,7 +82,7 @@
     "serverRuntimeConfig": {},
     "publicRuntimeConfig": {},
     "reactProductionProfiling": false,
-    "reactStrictMode": null,
+    "reactStrictMode": true,
     "reactMaxHeadersLength": 6000,
     "httpAgentOptions": {
       "keepAlive": true
@@ -96,7 +98,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\USER\\Documents\\GitHub\\primo",
+    "outputFileTracingRoot": "C:\\Users\\USER\\Documents\\GitHub\\primo\\front",
     "experimental": {
       "allowedDevOrigins": [],
       "nodeMiddleware": false,
@@ -175,7 +177,7 @@
       "forceSwcTransforms": false,
       "largePageDataBytes": 128000,
       "turbo": {
-        "root": "C:\\Users\\USER\\Documents\\GitHub\\primo"
+        "root": "C:\\Users\\USER\\Documents\\GitHub\\primo\\front"
       },
       "typedRoutes": false,
       "typedEnv": false,
@@ -281,7 +283,7 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.mjs"
   },
-  "appDir": "C:\\Users\\USER\\Documents\\GitHub\\primo",
+  "appDir": "C:\\Users\\USER\\Documents\\GitHub\\primo\\front",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",

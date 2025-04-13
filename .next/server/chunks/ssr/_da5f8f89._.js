@@ -10,6 +10,7 @@ __turbopack_context__.s({
     "getBrands": (()=>getBrands),
     "getCategories": (()=>getCategories),
     "getCategory": (()=>getCategory),
+    "getProduct": (()=>getProduct),
     "getProductByBrand": (()=>getProductByBrand),
     "getProductByCat": (()=>getProductByCat),
     "getProducts": (()=>getProducts)
@@ -126,6 +127,22 @@ async function getBrand(brandId) {
         return await response.json();
     } catch (error) {
         console.log('Error fetching products:', error);
+    }
+}
+async function getProduct(id) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/product_single/${id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': `application/json`
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching product:', error);
     }
 }
 }}),
@@ -619,7 +636,7 @@ function Page() {
                                         overflow: "hidden"
                                     },
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                        src: product.photo || '/placeholder.jpg',
+                                        src: product.photo,
                                         alt: product.name,
                                         className: "card-img-top img-fluid h-100 w-100 object-fit-cover",
                                         style: {
@@ -693,15 +710,7 @@ function Page() {
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "card-footer bg-transparent border-top-0",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: "btn btn-primary w-100",
-                                        children: "View Details"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                                        lineNumber: 257,
-                                        columnNumber: 3
-                                    }, this)
+                                    className: "card-footer bg-transparent border-top-0"
                                 }, void 0, false, {
                                     fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
                                     lineNumber: 256,
@@ -731,7 +740,7 @@ function Page() {
                             children: "No products found"
                         }, void 0, false, {
                             fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                            lineNumber: 273,
+                            lineNumber: 268,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -739,18 +748,18 @@ function Page() {
                             children: "Try adjusting your filters or search term"
                         }, void 0, false, {
                             fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                            lineNumber: 274,
+                            lineNumber: 269,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                    lineNumber: 272,
+                    lineNumber: 267,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                lineNumber: 271,
+                lineNumber: 266,
                 columnNumber: 9
             }, this),
             totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -769,17 +778,17 @@ function Page() {
                                     children: "«"
                                 }, void 0, false, {
                                     fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                                    lineNumber: 295,
+                                    lineNumber: 290,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                                lineNumber: 290,
+                                lineNumber: 285,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                            lineNumber: 289,
+                            lineNumber: 284,
                             columnNumber: 13
                         }, this),
                         [
@@ -792,12 +801,12 @@ function Page() {
                                     children: i + 1
                                 }, void 0, false, {
                                     fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                                    lineNumber: 301,
+                                    lineNumber: 296,
                                     columnNumber: 17
                                 }, this)
                             }, i, false, {
                                 fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                                lineNumber: 300,
+                                lineNumber: 295,
                                 columnNumber: 15
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -811,28 +820,28 @@ function Page() {
                                     children: "»"
                                 }, void 0, false, {
                                     fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                                    lineNumber: 316,
+                                    lineNumber: 311,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                                lineNumber: 311,
+                                lineNumber: 306,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                            lineNumber: 310,
+                            lineNumber: 305,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                    lineNumber: 288,
+                    lineNumber: 283,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(pages)/admin/categories/manage/[products]/page.js",
-                lineNumber: 287,
+                lineNumber: 282,
                 columnNumber: 9
             }, this)
         ]

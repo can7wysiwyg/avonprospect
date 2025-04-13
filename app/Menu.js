@@ -5,7 +5,8 @@ import {
   Search, 
   ShoppingCart,  
   Menu as MenuIcon, 
-  X 
+  X ,
+  ChevronDown
   
 } from 'lucide-react';
 import { DashboardComp } from '@/helpers/DashboardComp';
@@ -17,7 +18,6 @@ export default function Menu() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(3);
   const [isAuthenticated, setIsAuthenticated] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(true);
   
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -73,7 +73,7 @@ export default function Menu() {
                 <li><Link className="dropdown-item fs-6 py-2" href="#">Pants</Link></li>
                 <li><Link className="dropdown-item fs-6 py-2" href="#">Outerwear</Link></li>
                 <li><hr className="dropdown-divider" /></li>
-                <li><Link className="dropdown-item fs-6 py-2" href="#">All Men's</Link></li>
+                
               </ul>
             </li>
             

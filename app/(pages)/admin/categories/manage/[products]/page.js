@@ -229,7 +229,7 @@ export default function Page() {
               <div className="card h-100 shadow-sm">
                 <div style={{ height: "200px", overflow: "hidden" }}>
                   <img 
-                    src={product.photo || '/placeholder.jpg'} 
+                    src={product.photo} 
                     alt={product.name}
                     className="card-img-top img-fluid h-100 w-100 object-fit-cover"
                     style={{ objectPosition: "center" }}
@@ -254,12 +254,7 @@ export default function Page() {
                   </p>
                 </div>
                 <div className="card-footer bg-transparent border-top-0">
-  <button 
-    className="btn btn-primary w-100" 
-    
-  >
-    View Details
-  </button>
+ 
 </div>
 
 

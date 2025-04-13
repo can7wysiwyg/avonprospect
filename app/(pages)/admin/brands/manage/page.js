@@ -103,7 +103,7 @@ export default function BrandsPage() {
       {/* No Results */}
       {!loading && filteredBrands.length === 0 && (
         <div className="alert alert-info">
-          No categories found matching "{searchTerm}".
+          No categories found matching {searchTerm}.
           <button className="btn btn-link p-0 ms-2" onClick={clearSearch}>
             Clear search
           </button>

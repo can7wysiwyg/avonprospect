@@ -1,3 +1,0 @@
-{
-  "/(auth)/reset/[usertoken]/page": "app/(auth)/reset/[usertoken]/page.js"
-}

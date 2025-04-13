@@ -31,7 +31,7 @@ function CategoryManagement() {
                 className: "text-success mb-2"
             }, void 0, false, {
                 fileName: "[project]/app/(pages)/admin/categories/page.js",
-                lineNumber: 18,
+                lineNumber: 14,
                 columnNumber: 13
             }, this),
             label: 'New Category',
@@ -43,7 +43,7 @@ function CategoryManagement() {
                 className: "text-primary mb-2"
             }, void 0, false, {
                 fileName: "[project]/app/(pages)/admin/categories/page.js",
-                lineNumber: 23,
+                lineNumber: 19,
                 columnNumber: 13
             }, this),
             label: 'Manage Categories',
@@ -66,7 +66,7 @@ function CategoryManagement() {
                                 children: "Category Management"
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/categories/page.js",
-                                lineNumber: 37,
+                                lineNumber: 33,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$bootstrap$2f$esm$2f$Row$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Row$3e$__["Row"], {
@@ -85,54 +85,54 @@ function CategoryManagement() {
                                                         children: item.label
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/(pages)/admin/categories/page.js",
-                                                        lineNumber: 44,
+                                                        lineNumber: 40,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/(pages)/admin/categories/page.js",
-                                                lineNumber: 42,
+                                                lineNumber: 38,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(pages)/admin/categories/page.js",
-                                            lineNumber: 41,
+                                            lineNumber: 37,
                                             columnNumber: 21
                                         }, this)
                                     }, idx, false, {
                                         fileName: "[project]/app/(pages)/admin/categories/page.js",
-                                        lineNumber: 40,
+                                        lineNumber: 36,
                                         columnNumber: 19
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/(pages)/admin/categories/page.js",
-                                lineNumber: 38,
+                                lineNumber: 34,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(pages)/admin/categories/page.js",
-                        lineNumber: 36,
+                        lineNumber: 32,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/(pages)/admin/categories/page.js",
-                    lineNumber: 35,
+                    lineNumber: 31,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(pages)/admin/categories/page.js",
-                lineNumber: 34,
+                lineNumber: 30,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/(pages)/admin/categories/page.js",
-            lineNumber: 33,
+            lineNumber: 29,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/(pages)/admin/categories/page.js",
-        lineNumber: 32,
+        lineNumber: 28,
         columnNumber: 5
     }, this);
 }

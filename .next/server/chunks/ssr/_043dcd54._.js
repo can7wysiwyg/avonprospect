@@ -10,6 +10,7 @@ __turbopack_context__.s({
     "getBrands": (()=>getBrands),
     "getCategories": (()=>getCategories),
     "getCategory": (()=>getCategory),
+    "getProduct": (()=>getProduct),
     "getProductByBrand": (()=>getProductByBrand),
     "getProductByCat": (()=>getProductByCat),
     "getProducts": (()=>getProducts)
@@ -126,6 +127,22 @@ async function getBrand(brandId) {
         return await response.json();
     } catch (error) {
         console.log('Error fetching products:', error);
+    }
+}
+async function getProduct(id) {
+    try {
+        const response = await fetch(`${__TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$ApiUrl$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ApiUrl"]}/public/product_single/${id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': `application/json`
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Server Error ');
+        }
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching product:', error);
     }
 }
 }}),
@@ -323,9 +340,9 @@ function CategoriesPage() {
             !loading && filteredCategories.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "alert alert-info",
                 children: [
-                    'No categories found matching "',
+                    "No categories found matching ",
                     searchTerm,
-                    '".',
+                    ".",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         className: "btn btn-link p-0 ms-2",
                         onClick: clearSearch,

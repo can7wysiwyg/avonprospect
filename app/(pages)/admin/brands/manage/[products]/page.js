@@ -84,7 +84,7 @@ export default function Page() {
 
     setFilteredProducts(result)
     setCurrentPage(1) 
-  }, [searchTerm, selectedCategory, sortBy, priceRange, inStockOnly])
+  }, [searchTerm, selectedCategory, sortBy, priceRange, inStockOnly, productsInBrand])
 
   // Pagination logic
   const indexOfLastProduct = currentPage * productsPerPage
@@ -254,12 +254,7 @@ export default function Page() {
                   </p>
                 </div>
                 <div className="card-footer bg-transparent border-top-0">
-  <button 
-    className="btn btn-primary w-100" 
-    
-  >
-    View Details
-  </button>
+  
 </div>
 
 

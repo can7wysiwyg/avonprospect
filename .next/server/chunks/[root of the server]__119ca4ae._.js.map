@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 76, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/USER/Documents/GitHub/primo/app/api/auth/register/route.js"],"sourcesContent":["// import prisma from '@/lib/prisma';\r\nimport { PrismaClient } from '@prisma/client';\r\nimport { randomBytes, pbkdf2Sync } from 'crypto';\r\nimport { NextResponse } from 'next/server';\r\n\r\n\r\nconst prisma = new PrismaClient()\r\n\r\n\r\n\r\n\r\n\r\nexport async function POST(request) {\r\n    const body = await request.json()\r\n    const {name, email, password } = body\r\n    console.log(body)\r\n\r\n\r\n   return NextResponse.json({name, email, password})\r\n\r\n    \r\n\r\n\r\n}"],"names":[],"mappings":"AAAA,qCAAqC;;;;AACrC;AACA;AACA;;;;AAGA,MAAM,SAAS,IAAI,6HAAA,CAAA,eAAY;AAMxB,eAAe,KAAK,OAAO;IAC9B,MAAM,OAAO,MAAM,QAAQ,IAAI;IAC/B,MAAM,EAAC,IAAI,EAAE,KAAK,EAAE,QAAQ,EAAE,GAAG;IACjC,QAAQ,GAAG,CAAC;IAGb,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;QAAC;QAAM;QAAO;IAAQ;AAKlD","debugId":null}}]
-}

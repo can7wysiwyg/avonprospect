@@ -7,7 +7,7 @@ import { userForgotPassword } from '@/redux/actions/userAuthAction';
 import Link from 'next/link';
 
 
-export default function page() {
+export default function Page() {
     const mssg = useSelector((state) => state.userRdcr.mssg)
     const dispatch = useDispatch()
     const[data, setData] = useState({
