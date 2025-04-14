@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/USER/Documents/GitHub/primo/front/app/%28publico%29/cart/page.js"],"sourcesContent":["'use client'\r\nimport React from 'react'\r\n\r\nexport default function Cart() {\r\n  return (\r\n    <div>\r\n        <p>your cart</p>\r\n    </div>\r\n  )\r\n}\r\n"],"names":[],"mappings":";;;;AACA;AADA;;;AAGe,SAAS;IACtB,qBACE,8OAAC;kBACG,cAAA,8OAAC;sBAAE;;;;;;;;;;;AAGX","debugId":null}}]
+}

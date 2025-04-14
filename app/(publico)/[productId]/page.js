@@ -4,6 +4,8 @@ import { useParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
 import { ShoppingCart,  Share2 } from 'lucide-react'
 import Link from 'next/link'
+import { addItem } from '@/helpers/core/CartFuncs'
+
 
 export default function Product() {
   const { productId } = useParams()
@@ -13,6 +15,14 @@ export default function Product() {
   const[brand, setBrand] = useState({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [redirect, setRedirect] = useState(false);
+
+  const shouldRedirect = (redirect) => {
+    if (redirect) {
+      return (window.location.href = "/cart");
+    }
+  };
+
   
   useEffect(() => {
     const fetchData = async() => {
@@ -79,6 +89,8 @@ export default function Product() {
   return (
     <div className="product-page">
       <div className="container py-5">
+      {shouldRedirect(redirect)}
+
         <nav aria-label="breadcrumb" className="mb-4">
           <ol className="breadcrumb">
             <li className="breadcrumb-item"><Link href="/">Home</Link></li>
@@ -146,6 +158,12 @@ export default function Product() {
                 <div className="action-buttons d-flex flex-wrap gap-2 mb-4">
                   <button 
                     className="btn btn-primary btn-lg"
+
+                    onClick={() => {
+                      addItem(product, () => {
+                        setRedirect(true);
+                      });
+                    }}
                   
                     disabled={!product.inStock}
                   >
@@ -245,7 +263,7 @@ export default function Product() {
         </div>
       </div>
 
-      {/* Related Products Section - As a placeholder */}
+      {/* related products */}
       <div className="bg-light py-5">
         <div className="container">
           <h2 className="mb-4">Related Products</h2>
