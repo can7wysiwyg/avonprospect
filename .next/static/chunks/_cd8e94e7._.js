@@ -179,6 +179,7 @@ function Product() {
     const { productId } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"])();
     const [product, setProduct] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [category, setCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    const [relatedProducts, setRelatedProducts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [brand, setBrand] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -193,8 +194,10 @@ function Product() {
                             setProduct(data.product);
                             const cat = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CoreFuncs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getCategory"])(data.product.category);
                             const bland = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CoreFuncs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getBrand"])(data.product.brand);
+                            const allProds = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CoreFuncs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getProducts"])();
                             setCategory(cat?.category);
                             setBrand(bland?.brand);
+                            setRelatedProducts(allProds?.products);
                         } else {
                             setError('Product not found');
                         }
@@ -227,22 +230,22 @@ function Product() {
                         children: "Loading..."
                     }, void 0, false, {
                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                        lineNumber: 54,
+                        lineNumber: 58,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                    lineNumber: 53,
+                    lineNumber: 57,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                lineNumber: 52,
+                lineNumber: 56,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/(publico)/[productId]/page.js",
-            lineNumber: 51,
+            lineNumber: 55,
             columnNumber: 7
         }, this);
     }
@@ -255,7 +258,7 @@ function Product() {
                     children: error || 'Product not found'
                 }, void 0, false, {
                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                    lineNumber: 64,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -264,180 +267,180 @@ function Product() {
                     children: "Back to Products"
                 }, void 0, false, {
                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                    lineNumber: 67,
+                    lineNumber: 71,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/(publico)/[productId]/page.js",
-            lineNumber: 63,
+            lineNumber: 67,
             columnNumber: 7
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "jsx-5abaa29b406eb202" + " " + "product-page",
+        className: "jsx-64143a217aa33f05" + " " + "product-page",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-5abaa29b406eb202" + " " + "container py-5",
+                className: "jsx-64143a217aa33f05" + " " + "container py-5",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                         "aria-label": "breadcrumb",
-                        className: "jsx-5abaa29b406eb202" + " " + "mb-4",
+                        className: "jsx-64143a217aa33f05" + " " + "mb-4",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
-                            className: "jsx-5abaa29b406eb202" + " " + "breadcrumb",
+                            className: "jsx-64143a217aa33f05" + " " + "breadcrumb",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-5abaa29b406eb202" + " " + "breadcrumb-item",
+                                    className: "jsx-64143a217aa33f05" + " " + "breadcrumb-item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/",
                                         children: "Home"
                                     }, void 0, false, {
                                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                                        lineNumber: 80,
+                                        lineNumber: 84,
                                         columnNumber: 45
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                    lineNumber: 80,
+                                    lineNumber: 84,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-5abaa29b406eb202" + " " + "breadcrumb-item",
+                                    className: "jsx-64143a217aa33f05" + " " + "breadcrumb-item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/products",
                                         children: "Products"
                                     }, void 0, false, {
                                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                                        lineNumber: 81,
+                                        lineNumber: 85,
                                         columnNumber: 45
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                    lineNumber: 81,
+                                    lineNumber: 85,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     "aria-current": "page",
-                                    className: "jsx-5abaa29b406eb202" + " " + "breadcrumb-item active",
+                                    className: "jsx-64143a217aa33f05" + " " + "breadcrumb-item active",
                                     children: product.name
                                 }, void 0, false, {
                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                    lineNumber: 82,
+                                    lineNumber: 86,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                            lineNumber: 79,
+                            lineNumber: 83,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                        lineNumber: 78,
+                        lineNumber: 82,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-5abaa29b406eb202" + " " + "row",
+                        className: "jsx-64143a217aa33f05" + " " + "row",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-5abaa29b406eb202" + " " + "col-lg-6 mb-4 mb-lg-0",
+                                className: "jsx-64143a217aa33f05" + " " + "col-lg-6 mb-4 mb-lg-0",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-5abaa29b406eb202" + " " + "product-gallery",
+                                    className: "jsx-64143a217aa33f05" + " " + "product-gallery",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-5abaa29b406eb202" + " " + "main-image-container position-relative",
+                                        className: "jsx-64143a217aa33f05" + " " + "main-image-container position-relative",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-5abaa29b406eb202" + " " + "main-image",
+                                            className: "jsx-64143a217aa33f05" + " " + "main-image",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                 src: product.photo,
                                                 alt: product.name,
-                                                className: "jsx-5abaa29b406eb202" + " " + "img-fluid rounded shadow-sm"
+                                                className: "jsx-64143a217aa33f05" + " " + "img-fluid rounded shadow-sm"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                lineNumber: 93,
+                                                lineNumber: 97,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                            lineNumber: 92,
+                                            lineNumber: 96,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                                        lineNumber: 90,
+                                        lineNumber: 94,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                    lineNumber: 89,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                lineNumber: 88,
+                                lineNumber: 92,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-5abaa29b406eb202" + " " + "col-lg-6",
+                                className: "jsx-64143a217aa33f05" + " " + "col-lg-6",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-5abaa29b406eb202" + " " + "product-details",
+                                    className: "jsx-64143a217aa33f05" + " " + "product-details",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                            className: "jsx-5abaa29b406eb202" + " " + "product-title display-5 fw-bold mb-1",
+                                            className: "jsx-64143a217aa33f05" + " " + "product-title display-5 fw-bold mb-1",
                                             children: product.name
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                            lineNumber: 110,
+                                            lineNumber: 114,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-5abaa29b406eb202" + " " + "product-price mb-4",
+                                            className: "jsx-64143a217aa33f05" + " " + "product-price mb-4",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "jsx-5abaa29b406eb202" + " " + "fs-2 fw-bold",
+                                                className: "jsx-64143a217aa33f05" + " " + "fs-2 fw-bold",
                                                 children: [
                                                     "MWK",
                                                     product.price
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                lineNumber: 115,
+                                                lineNumber: 119,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                            lineNumber: 113,
+                                            lineNumber: 117,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-5abaa29b406eb202" + " " + "product-description mb-4",
+                                            className: "jsx-64143a217aa33f05" + " " + "product-description mb-4",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "jsx-5abaa29b406eb202" + " " + "text-muted",
+                                                className: "jsx-64143a217aa33f05" + " " + "text-muted",
                                                 children: product.description
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                lineNumber: 121,
+                                                lineNumber: 125,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                            lineNumber: 119,
+                                            lineNumber: 123,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-5abaa29b406eb202" + " " + "product-options mb-4",
+                                            className: "jsx-64143a217aa33f05" + " " + "product-options mb-4",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-5abaa29b406eb202" + " " + "stock-status mb-4",
+                                                    className: "jsx-64143a217aa33f05" + " " + "stock-status mb-4",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "jsx-5abaa29b406eb202" + " " + `badge ${product.inStock ? 'bg-success' : 'bg-danger'}`,
+                                                            className: "jsx-64143a217aa33f05" + " " + `badge ${product.inStock ? 'bg-success' : 'bg-danger'}`,
                                                             children: product.inStock ? 'In Stock' : 'Out of Stock'
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                            lineNumber: 131,
+                                                            lineNumber: 135,
                                                             columnNumber: 19
                                                         }, this),
                                                         product.stockQuantity && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "jsx-5abaa29b406eb202" + " " + "ms-2 text-muted",
+                                                            className: "jsx-64143a217aa33f05" + " " + "ms-2 text-muted",
                                                             children: [
                                                                 "(",
                                                                 product.stockQuantity,
@@ -445,156 +448,156 @@ function Product() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                            lineNumber: 135,
+                                                            lineNumber: 139,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                    lineNumber: 130,
+                                                    lineNumber: 134,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-5abaa29b406eb202" + " " + "action-buttons d-flex flex-wrap gap-2 mb-4",
+                                                    className: "jsx-64143a217aa33f05" + " " + "action-buttons d-flex flex-wrap gap-2 mb-4",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                             disabled: !product.inStock,
-                                                            className: "jsx-5abaa29b406eb202" + " " + "btn btn-primary btn-lg",
+                                                            className: "jsx-64143a217aa33f05" + " " + "btn btn-primary btn-lg",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__["ShoppingCart"], {
                                                                     size: 20,
                                                                     className: "me-2"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                                    lineNumber: 148,
+                                                                    lineNumber: 152,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 "Add to Cart"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                            lineNumber: 143,
+                                                            lineNumber: 147,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                            className: "jsx-5abaa29b406eb202" + " " + "btn btn-outline-dark btn-lg",
+                                                            className: "jsx-64143a217aa33f05" + " " + "btn btn-outline-dark btn-lg",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$share$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Share2$3e$__["Share2"], {
                                                                 size: 20
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                                lineNumber: 153,
+                                                                lineNumber: 157,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                            lineNumber: 152,
+                                                            lineNumber: 156,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                    lineNumber: 142,
+                                                    lineNumber: 146,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-5abaa29b406eb202" + " " + "product-meta",
+                                                    className: "jsx-64143a217aa33f05" + " " + "product-meta",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-5abaa29b406eb202" + " " + "mb-2",
+                                                            className: "jsx-64143a217aa33f05" + " " + "mb-2",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                                    className: "jsx-5abaa29b406eb202",
+                                                                    className: "jsx-64143a217aa33f05",
                                                                     children: "Category:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                                    lineNumber: 161,
+                                                                    lineNumber: 165,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-5abaa29b406eb202" + " " + "text-muted ms-1",
+                                                                    className: "jsx-64143a217aa33f05" + " " + "text-muted ms-1",
                                                                     children: category?.catName
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                                    lineNumber: 162,
+                                                                    lineNumber: 166,
                                                                     columnNumber: 16
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                            lineNumber: 160,
+                                                            lineNumber: 164,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "jsx-5abaa29b406eb202" + " " + "mb-2",
+                                                            className: "jsx-64143a217aa33f05" + " " + "mb-2",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                                    className: "jsx-5abaa29b406eb202",
+                                                                    className: "jsx-64143a217aa33f05",
                                                                     children: "Brand:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                                    lineNumber: 167,
+                                                                    lineNumber: 171,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-5abaa29b406eb202" + " " + "text-muted ms-1",
+                                                                    className: "jsx-64143a217aa33f05" + " " + "text-muted ms-1",
                                                                     children: brand?.brandName
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                                    lineNumber: 168,
+                                                                    lineNumber: 172,
                                                                     columnNumber: 16
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                            lineNumber: 166,
+                                                            lineNumber: 170,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                    lineNumber: 158,
+                                                    lineNumber: 162,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                                            lineNumber: 125,
+                                            lineNumber: 129,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                    lineNumber: 109,
+                                    lineNumber: 113,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                lineNumber: 108,
+                                lineNumber: 112,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                        lineNumber: 86,
+                        lineNumber: 90,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                lineNumber: 77,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-5abaa29b406eb202" + " " + "container mb-5",
+                className: "jsx-64143a217aa33f05" + " " + "container mb-5",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                         id: "productTabs",
                         role: "tablist",
-                        className: "jsx-5abaa29b406eb202" + " " + "nav nav-tabs",
+                        className: "jsx-64143a217aa33f05" + " " + "nav nav-tabs",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                 role: "presentation",
-                                className: "jsx-5abaa29b406eb202" + " " + "nav-item",
+                                className: "jsx-64143a217aa33f05" + " " + "nav-item",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     id: "description-tab",
                                     "data-bs-toggle": "tab",
@@ -603,21 +606,21 @@ function Product() {
                                     role: "tab",
                                     "aria-controls": "description",
                                     "aria-selected": "true",
-                                    className: "jsx-5abaa29b406eb202" + " " + "nav-link active",
+                                    className: "jsx-64143a217aa33f05" + " " + "nav-link active",
                                     children: "Description"
                                 }, void 0, false, {
                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                    lineNumber: 183,
+                                    lineNumber: 187,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                lineNumber: 182,
+                                lineNumber: 186,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                 role: "presentation",
-                                className: "jsx-5abaa29b406eb202" + " " + "nav-item",
+                                className: "jsx-64143a217aa33f05" + " " + "nav-item",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     id: "shipping-tab",
                                     "data-bs-toggle": "tab",
@@ -626,168 +629,259 @@ function Product() {
                                     role: "tab",
                                     "aria-controls": "shipping",
                                     "aria-selected": "false",
-                                    className: "jsx-5abaa29b406eb202" + " " + "nav-link",
+                                    className: "jsx-64143a217aa33f05" + " " + "nav-link",
                                     children: "Shipping"
                                 }, void 0, false, {
                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                    lineNumber: 198,
+                                    lineNumber: 202,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                lineNumber: 197,
+                                lineNumber: 201,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                        lineNumber: 181,
+                        lineNumber: 185,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         id: "productTabsContent",
-                        className: "jsx-5abaa29b406eb202" + " " + "tab-content p-4 border border-top-0 rounded-bottom",
+                        className: "jsx-64143a217aa33f05" + " " + "tab-content p-4 border border-top-0 rounded-bottom",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 id: "description",
                                 role: "tabpanel",
                                 "aria-labelledby": "description-tab",
-                                className: "jsx-5abaa29b406eb202" + " " + "tab-pane fade show active",
+                                className: "jsx-64143a217aa33f05" + " " + "tab-pane fade show active",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-5abaa29b406eb202" + " " + "row",
+                                    className: "jsx-64143a217aa33f05" + " " + "row",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-5abaa29b406eb202" + " " + "col-md-8",
+                                        className: "jsx-64143a217aa33f05" + " " + "col-md-8",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "jsx-5abaa29b406eb202",
+                                                className: "jsx-64143a217aa33f05",
                                                 children: "Product Details"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                lineNumber: 221,
+                                                lineNumber: 225,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "jsx-5abaa29b406eb202" + " " + "lead",
+                                                className: "jsx-64143a217aa33f05" + " " + "lead",
                                                 children: product.description
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                                lineNumber: 222,
+                                                lineNumber: 226,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                                        lineNumber: 220,
+                                        lineNumber: 224,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                    lineNumber: 219,
+                                    lineNumber: 223,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                lineNumber: 213,
+                                lineNumber: 217,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 id: "shipping",
                                 role: "tabpanel",
                                 "aria-labelledby": "shipping-tab",
-                                className: "jsx-5abaa29b406eb202" + " " + "tab-pane fade",
+                                className: "jsx-64143a217aa33f05" + " " + "tab-pane fade",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "jsx-5abaa29b406eb202",
+                                        className: "jsx-64143a217aa33f05",
                                         children: "Shipping"
                                     }, void 0, false, {
                                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                                        lineNumber: 238,
+                                        lineNumber: 242,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "jsx-5abaa29b406eb202",
+                                        className: "jsx-64143a217aa33f05",
                                         children: "Free shipping on all orders over ...."
                                     }, void 0, false, {
                                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                                        lineNumber: 239,
+                                        lineNumber: 243,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                lineNumber: 232,
+                                lineNumber: 236,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(publico)/[productId]/page.js",
-                        lineNumber: 212,
+                        lineNumber: 216,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                lineNumber: 180,
+                lineNumber: 184,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-5abaa29b406eb202" + " " + "bg-light py-5",
+                className: "jsx-64143a217aa33f05" + " " + "bg-light py-5",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "jsx-5abaa29b406eb202" + " " + "container",
+                    className: "jsx-64143a217aa33f05" + " " + "container",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "jsx-5abaa29b406eb202" + " " + "mb-4",
+                            className: "jsx-64143a217aa33f05" + " " + "mb-4",
                             children: "Related Products"
                         }, void 0, false, {
                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                            lineNumber: 247,
+                            lineNumber: 251,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "jsx-5abaa29b406eb202" + " " + "row",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-5abaa29b406eb202" + " " + "col-12",
+                            className: "jsx-64143a217aa33f05" + " " + "row",
+                            children: relatedProducts && relatedProducts.length > 0 ? relatedProducts.filter((item)=>item?.category === product.category && item._id !== product._id).slice(0, 3).map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "jsx-64143a217aa33f05" + " " + "col-md-4 col-sm-6 mb-4",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "jsx-64143a217aa33f05" + " " + "card h-100 product-card",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                href: `/${item._id}`,
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "jsx-64143a217aa33f05" + " " + "product-image-container",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                        src: item.photo,
+                                                        alt: item.name,
+                                                        className: "jsx-64143a217aa33f05" + " " + "card-img-top"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/(publico)/[productId]/page.js",
+                                                        lineNumber: 263,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/(publico)/[productId]/page.js",
+                                                    lineNumber: 262,
+                                                    columnNumber: 19
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/(publico)/[productId]/page.js",
+                                                lineNumber: 261,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "jsx-64143a217aa33f05" + " " + "card-body",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
+                                                        className: "jsx-64143a217aa33f05" + " " + "card-title",
+                                                        children: item.name
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/(publico)/[productId]/page.js",
+                                                        lineNumber: 271,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "jsx-64143a217aa33f05" + " " + "d-flex justify-content-between align-items-center",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "jsx-64143a217aa33f05" + " " + "price-container",
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "jsx-64143a217aa33f05" + " " + "fw-bold",
+                                                                    children: [
+                                                                        "MWK",
+                                                                        item.price
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/app/(publico)/[productId]/page.js",
+                                                                    lineNumber: 275,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/(publico)/[productId]/page.js",
+                                                                lineNumber: 273,
+                                                                columnNumber: 21
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                href: `/${item._id}`,
+                                                                className: "btn btn-sm btn-outline-primary",
+                                                                children: "View"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/(publico)/[productId]/page.js",
+                                                                lineNumber: 278,
+                                                                columnNumber: 21
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/(publico)/[productId]/page.js",
+                                                        lineNumber: 272,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/(publico)/[productId]/page.js",
+                                                lineNumber: 270,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/(publico)/[productId]/page.js",
+                                        lineNumber: 260,
+                                        columnNumber: 15
+                                    }, this)
+                                }, item._id, false, {
+                                    fileName: "[project]/app/(publico)/[productId]/page.js",
+                                    lineNumber: 259,
+                                    columnNumber: 13
+                                }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "jsx-64143a217aa33f05" + " " + "col-12",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "jsx-5abaa29b406eb202" + " " + "text-muted",
-                                    children: "Related products will be displayed here."
+                                    className: "jsx-64143a217aa33f05" + " " + "text-muted",
+                                    children: "No related products found."
                                 }, void 0, false, {
                                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                                    lineNumber: 250,
-                                    columnNumber: 15
+                                    lineNumber: 286,
+                                    columnNumber: 11
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                                lineNumber: 249,
-                                columnNumber: 13
+                                lineNumber: 285,
+                                columnNumber: 9
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/(publico)/[productId]/page.js",
-                            lineNumber: 248,
+                            lineNumber: 252,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/(publico)/[productId]/page.js",
-                    lineNumber: 246,
+                    lineNumber: 250,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(publico)/[productId]/page.js",
-                lineNumber: 245,
+                lineNumber: 249,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "5abaa29b406eb202",
-                children: ".main-image-container{background-color:#fff;border-radius:6px;position:relative;overflow:hidden;box-shadow:0 4px 12px #0000000d}.main-image{justify-content:center;align-items:center;height:500px;display:flex}.main-image img{object-fit:contain;max-width:100%;max-height:100%}.thumbnail-gallery{gap:10px}.thumbnail-item{cursor:pointer;opacity:.7;border:2px solid #0000;border-radius:4px;width:80px;height:80px;transition:all .2s;overflow:hidden}.thumbnail-item:hover{opacity:.9}.thumbnail-item.active{opacity:1;border-color:var(--bs-primary)}.thumbnail-item img{object-fit:cover;width:100%;height:100%}.carousel-control{cursor:pointer;z-index:1;background:#fffc;border:none;border-radius:50%;justify-content:center;align-items:center;width:40px;height:40px;transition:all .2s;display:flex;position:absolute;top:50%;transform:translateY(-50%);box-shadow:0 2px 5px #0000001a}.carousel-control:hover{background:#fff;box-shadow:0 3px 8px #00000026}.carousel-control-prev{left:10px}.carousel-control-next{right:10px}.color-circle{cursor:pointer;border-radius:50%;width:32px;height:32px;transition:all .2s;position:relative;box-shadow:0 2px 4px #0000001a}.color-circle:hover{transform:scale(1.1)}.color-circle.active{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--bs-primary);transform:scale(1.1)}.product-meta{border-top:1px solid #eee;padding-top:20px}@media (width<=992px){.main-image{height:400px}}@media (width<=768px){.main-image{height:350px}.thumbnail-item{width:60px;height:60px}}@media (width<=576px){.main-image{height:300px}.action-buttons{flex-direction:column}.action-buttons button{width:100%}}"
+                id: "64143a217aa33f05",
+                children: ".main-image-container{background-color:#fff;border-radius:6px;position:relative;overflow:hidden;box-shadow:0 4px 12px #0000000d}.main-image{justify-content:center;align-items:center;height:500px;display:flex}.main-image img{object-fit:contain;max-width:100%;max-height:100%}.thumbnail-gallery{gap:10px}.thumbnail-item{cursor:pointer;opacity:.7;border:2px solid #0000;border-radius:4px;width:80px;height:80px;transition:all .2s;overflow:hidden}.thumbnail-item:hover{opacity:.9}.thumbnail-item.active{opacity:1;border-color:var(--bs-primary)}.thumbnail-item img{object-fit:cover;width:100%;height:100%}.carousel-control{cursor:pointer;z-index:1;background:#fffc;border:none;border-radius:50%;justify-content:center;align-items:center;width:40px;height:40px;transition:all .2s;display:flex;position:absolute;top:50%;transform:translateY(-50%);box-shadow:0 2px 5px #0000001a}.carousel-control:hover{background:#fff;box-shadow:0 3px 8px #00000026}.carousel-control-prev{left:10px}.carousel-control-next{right:10px}.color-circle{cursor:pointer;border-radius:50%;width:32px;height:32px;transition:all .2s;position:relative;box-shadow:0 2px 4px #0000001a}.color-circle:hover{transform:scale(1.1)}.color-circle.active{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--bs-primary);transform:scale(1.1)}.product-meta{border-top:1px solid #eee;padding-top:20px}@media (width<=992px){.main-image{height:400px}}@media (width<=768px){.main-image{height:350px}.thumbnail-item{width:60px;height:60px}}@media (width<=576px){.main-image{height:300px}.action-buttons{flex-direction:column}.action-buttons button{width:100%}}.product-image-container{background-color:#f8f9fa;justify-content:center;align-items:center;height:200px;display:flex;overflow:hidden}.product-image-container img{object-fit:contain;max-width:100%;max-height:100%}.product-card{transition:transform .3s,box-shadow .3s}.product-card:hover{transform:translateY(-5px);box-shadow:0 10px 20px #0000001a}@media (width<=768px){.product-image-container{height:180px}}"
             }, void 0, false, void 0, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(publico)/[productId]/page.js",
-        lineNumber: 76,
+        lineNumber: 80,
         columnNumber: 5
     }, this);
 }
-_s(Product, "cdrC13a7hfWMyanLEfLsXEHEPkU=", false, function() {
+_s(Product, "h0xnIl9KLdWxrgQcfRVGUVU00kI=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useParams"]
     ];

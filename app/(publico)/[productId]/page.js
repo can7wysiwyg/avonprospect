@@ -1,5 +1,5 @@
 'use client'
-import { getBrand, getCategory, getProduct } from '@/helpers/core/CoreFuncs'
+import { getBrand, getCategory, getProduct, getProducts } from '@/helpers/core/CoreFuncs'
 import { useParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
 import { ShoppingCart,  Share2 } from 'lucide-react'
@@ -9,6 +9,7 @@ export default function Product() {
   const { productId } = useParams()
   const [product, setProduct] = useState(null)
   const[category, setCategory] = useState({})
+  const[relatedProducts, setRelatedProducts] = useState([])
   const[brand, setBrand] = useState({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -19,14 +20,17 @@ export default function Product() {
         setLoading(true)
         const data = await getProduct(productId)
 
+
         if(data && data.product) {
           setProduct(data.product)
 
           const cat = await getCategory(data.product.category)
           const bland = await getBrand(data.product.brand)
+          const allProds = await getProducts()
 
           setCategory(cat?.category)
           setBrand(bland?.brand)
+          setRelatedProducts(allProds?.products)
 
           
         } else {
@@ -246,10 +250,49 @@ export default function Product() {
         <div className="container">
           <h2 className="mb-4">Related Products</h2>
           <div className="row">
-            <div className="col-12">
-              <p className="text-muted">Related products will be displayed here.</p>
+            
+            {relatedProducts && relatedProducts.length > 0 ? (
+        relatedProducts
+          .filter(item => item?.category === product.category && item._id !== product._id)
+          .slice(0, 3)
+          .map((item, index) => (
+            <div key={item._id} className="col-md-4 col-sm-6 mb-4">
+              <div className="card h-100 product-card">
+                <Link href={`/${item._id}`}>
+                  <div className="product-image-container">
+                    <img 
+                      src={item.photo } 
+                      className="card-img-top" 
+                      alt={item.name} 
+                    />
+                  </div>
+                </Link>
+                <div className="card-body">
+                  <h5 className="card-title">{item.name}</h5>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="price-container">
+                      
+                        <span className="fw-bold">MWK{item.price}</span>
+                      
+                    </div>
+                    <Link href={`/${item._id}`} className="btn btn-sm btn-outline-primary">View</Link>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ))
+      ) : (
+        <div className="col-12">
+          <p className="text-muted">No related products found.</p>
+        </div>
+      )}
+
+              
+             
+{/* end */}
+
+            </div>
+          
         </div>
       </div>
 
@@ -396,6 +439,39 @@ export default function Product() {
             width: 100%;
           }
         }
+
+// related
+    .product-image-container {
+      height: 200px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8f9fa;
+    }
+    
+    .product-image-container img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    
+    .product-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .product-image-container {
+        height: 180px;
+      }
+    }
+
+
       `}</style>
     </div>
   )
