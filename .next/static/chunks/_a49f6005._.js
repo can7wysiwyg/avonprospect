@@ -284,12 +284,12 @@ function ProductSwiper() {
         style: {
             background: '#F9F3EC'
         },
-        className: "jsx-5e320c918db688ec",
+        className: "jsx-76f4fd1c563bbb72",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-5e320c918db688ec" + " " + "container",
+                className: "jsx-76f4fd1c563bbb72" + " " + "container",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "jsx-5e320c918db688ec" + " " + "position-relative",
+                    className: "jsx-76f4fd1c563bbb72" + " " + "position-relative",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Swiper"], {
                             modules: [
@@ -310,16 +310,16 @@ function ProductSwiper() {
                             children: products.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swiper$2f$swiper$2d$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SwiperSlide"], {
                                     className: "py-5",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-5e320c918db688ec" + " " + "row banner-content align-items-center",
+                                        className: "jsx-76f4fd1c563bbb72" + " " + "row banner-content align-items-center",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-5e320c918db688ec" + " " + "img-wrapper col-md-5 position-relative",
+                                                className: "jsx-76f4fd1c563bbb72" + " " + "img-wrapper col-md-5 position-relative",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-5e320c918db688ec" + " " + "banner-image-container",
+                                                    className: "jsx-76f4fd1c563bbb72" + " " + "banner-image-container",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                         src: product.photo,
                                                         alt: product.name,
-                                                        className: "jsx-5e320c918db688ec" + " " + "banner-image"
+                                                        className: "jsx-76f4fd1c563bbb72" + " " + "banner-image"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/home/Swiper.js",
                                                         lineNumber: 81,
@@ -336,25 +336,25 @@ function ProductSwiper() {
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-5e320c918db688ec" + " " + "content-wrapper col-md-7 p-5 mb-5",
+                                                className: "jsx-76f4fd1c563bbb72" + " " + "content-wrapper col-md-7 p-5 mb-5",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                        className: "jsx-5e320c918db688ec" + " " + "banner-title display-1 fw-normal",
+                                                        className: "jsx-76f4fd1c563bbb72" + " " + "banner-title display-1 fw-normal",
                                                         children: [
                                                             product.name,
                                                             " ",
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "jsx-5e320c918db688ec" + " " + "text-primary",
+                                                                className: "jsx-76f4fd1c563bbb72" + " " + "text-primary",
                                                                 children: "collection"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/home/Swiper.js",
-                                                                lineNumber: 93,
+                                                                lineNumber: 90,
                                                                 columnNumber: 39
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/home/Swiper.js",
-                                                        lineNumber: 92,
+                                                        lineNumber: 89,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -367,13 +367,13 @@ function ProductSwiper() {
                                                                 className: "mb-1 ms-2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/home/Swiper.js",
-                                                                lineNumber: 100,
+                                                                lineNumber: 97,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/home/Swiper.js",
-                                                        lineNumber: 95,
+                                                        lineNumber: 92,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
@@ -399,10 +399,10 @@ function ProductSwiper() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "jsx-5e320c918db688ec" + " " + "swiper-pagination d-flex justify-content-center mb-5"
+                            className: "jsx-76f4fd1c563bbb72" + " " + "swiper-pagination d-flex justify-content-center mb-5"
                         }, void 0, false, {
                             fileName: "[project]/app/home/Swiper.js",
-                            lineNumber: 108,
+                            lineNumber: 105,
                             columnNumber: 11
                         }, this)
                     ]
@@ -417,8 +417,8 @@ function ProductSwiper() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "5e320c918db688ec",
-                children: ".banner-title{margin-bottom:1.5rem}.main-swiper{position:relative}.swiper-pagination{text-align:center;width:100%;position:absolute;bottom:0;left:0}.swiper-pagination-bullet{opacity:.5;background:#000;width:12px;height:12px;margin:0 5px}.swiper-pagination-bullet-active{opacity:1;background:var(--bs-primary)}.banner-image-container{border-radius:8px;width:100%;height:400px;position:relative;overflow:hidden}.banner-image{object-fit:cover;opacity:.9;width:100%;height:100%;transition:transform .3s}.banner-image:hover{opacity:1;transform:scale(1.05)}"
+                id: "76f4fd1c563bbb72",
+                children: ".banner-title{margin-bottom:1.5rem}.main-swiper{position:relative}.swiper-pagination{text-align:center;width:100%;position:absolute;bottom:0;left:0}.swiper-pagination-bullet{opacity:.5;background:#000;width:12px;height:12px;margin:0 5px}.swiper-pagination-bullet-active{opacity:1;background:var(--bs-primary)}.banner-image-container{border-radius:8px;width:100%;height:300px;position:relative;overflow:hidden}.banner-image{object-fit:cover;opacity:.9;max-width:100%;max-height:100%;transition:transform .3s}.banner-image:hover{opacity:1;transform:scale(1.05)}@media (width>=768px){.banner-image-container{height:350px}}@media (width>=992px){.banner-image-container{height:450px}.row.banner-content{min-height:500px}}@media (width>=1200px){.banner-image-container{height:500px}.row.banner-content{min-height:600px}.banner-title{font-size:3.5rem}}@media (width<=767px){.row.banner-content{flex-direction:column}.img-wrapper{order:1;width:100%;margin-bottom:2rem}.content-wrapper{text-align:center;order:2;padding:1rem!important}.banner-title{font-size:2rem}}"
             }, void 0, false, void 0, this)
         ]
     }, void 0, true, {

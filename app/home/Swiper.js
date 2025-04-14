@@ -86,9 +86,6 @@ export default function ProductSwiper() {
                     </div>
                   </div>
                   <div className="content-wrapper col-md-7 p-5 mb-5">
-                    {/* <div className="secondary-font text-primary text-uppercase mb-4">
-                      { 'Save 10 - 20 % off'}
-                    </div> */}
                     <h2 className="banner-title display-1 fw-normal">
                       { product.name} <span className="text-primary">collection</span>
                     </h2>
@@ -142,14 +139,14 @@ export default function ProductSwiper() {
         .banner-image-container {
           position: relative;
           width: 100%;
-          height: 400px;
+          height: 300px;
           overflow: hidden;
           border-radius: 8px;
         }
         
         .banner-image {
-          width: 100%;
-          height: 100%;
+          max-width: 100%;
+          max-height: 100%;
           object-fit: cover;
           transition: transform 0.3s ease;
           opacity: 0.9;
@@ -158,6 +155,60 @@ export default function ProductSwiper() {
         .banner-image:hover {
           transform: scale(1.05);
           opacity: 1;
+        }
+
+        /* Media queries for responsive design */
+        @media (min-width: 768px) {
+          .banner-image-container {
+            height: 350px;
+          }
+        }
+        
+        @media (min-width: 992px) {
+          .banner-image-container {
+            height: 450px;
+          }
+          
+          .row.banner-content {
+            min-height: 500px;
+          }
+        }
+        
+        @media (min-width: 1200px) {
+          .banner-image-container {
+            height: 500px;
+          }
+          
+          .row.banner-content {
+            min-height: 600px;
+          }
+          
+          .banner-title {
+            font-size: 3.5rem;
+          }
+        }
+        
+        /* Make the layout better on mobile */
+        @media (max-width: 767px) {
+          .row.banner-content {
+            flex-direction: column;
+          }
+          
+          .img-wrapper {
+            order: 1;
+            width: 100%;
+            margin-bottom: 2rem;
+          }
+          
+          .content-wrapper {
+            order: 2;
+            text-align: center;
+            padding: 1rem !important;
+          }
+          
+          .banner-title {
+            font-size: 2rem;
+          }
         }
       `}</style>
     </section>
