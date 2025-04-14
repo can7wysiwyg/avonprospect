@@ -1,20 +1,18 @@
 'use client'
-import { getProduct } from '@/helpers/core/CoreFuncs'
+import { getBrand, getCategory, getProduct } from '@/helpers/core/CoreFuncs'
 import { useParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
-import { ShoppingCart, Heart, Share2, Star, StarHalf, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ShoppingCart,  Share2 } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Product() {
   const { productId } = useParams()
   const [product, setProduct] = useState(null)
+  const[category, setCategory] = useState({})
+  const[brand, setBrand] = useState({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [quantity, setQuantity] = useState(1)
-  const [activeImage, setActiveImage] = useState(0)
-  const [selectedSize, setSelectedSize] = useState('')
-  const [selectedColor, setSelectedColor] = useState('')
-
+  
   useEffect(() => {
     const fetchData = async() => {
       try {
@@ -23,6 +21,14 @@ export default function Product() {
 
         if(data && data.product) {
           setProduct(data.product)
+
+          const cat = await getCategory(data.product.category)
+          const bland = await getBrand(data.product.brand)
+
+          setCategory(cat?.category)
+          setBrand(bland?.brand)
+
+          
         } else {
           setError('Product not found')
         }
@@ -38,12 +44,7 @@ export default function Product() {
   }, [productId])
 
   
-  // Demo function for adding to cart - replace with actual implementation
-  const addToCart = () => {
-    alert(`Added ${quantity} of ${product.name} to cart`)
-    // Implement actual cart functionality here
-  }
-
+  
   
   if (loading) {
     return (
@@ -70,37 +71,7 @@ export default function Product() {
     )
   }
 
-  // Fallback for missing images
-  const images = product.images && product.images.length > 0 
-    ? product.images 
-    : [product.imageUrl || '/placeholder-product.jpg']
-
-  // Fallback for sizes and colors
-  const sizes = product.sizes || ['S', 'M', 'L', 'XL']
-  const colors = product.colors || ['#000000', '#3B82F6', '#EF4444', '#10B981']
-
-  // Generate star ratings
-  const renderRatingStars = (rating) => {
-    const fullStars = Math.floor(rating)
-    const hasHalfStar = rating % 1 >= 0.5
-    const stars = []
-
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<Star key={`full-${i}`} fill="#FFD700" color="#FFD700" size={20} />)
-    }
-
-    if (hasHalfStar) {
-      stars.push(<StarHalf key="half" fill="#FFD700" color="#FFD700" size={20} />)
-    }
-
-    const emptyStars = 5 - stars.length
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(<Star key={`empty-${i}`} color="#FFD700" size={20} />)
-    }
-
-    return stars
-  }
-
+  
   return (
     <div className="product-page">
       <div className="container py-5">
@@ -171,7 +142,7 @@ export default function Product() {
                 <div className="action-buttons d-flex flex-wrap gap-2 mb-4">
                   <button 
                     className="btn btn-primary btn-lg"
-                    onClick={addToCart}
+                  
                     disabled={!product.inStock}
                   >
                     <ShoppingCart size={20} className="me-2" />
@@ -183,23 +154,19 @@ export default function Product() {
                   </button>
                 </div>
 
-                {/* Product Meta Info */}
+            
                 <div className="product-meta">
                   
                   <div className="mb-2">
-                    <strong>Categories:</strong> 
-                    {product.categories ? (
-                      product.categories.map((cat, idx) => (
-                        <span key={idx}>
-                          <Link href={`/category/${cat}`} className="text-decoration-none ms-1">
-                            {cat.catName}
-                          </Link>
-                          {idx < product.categories.length - 1 ? ',' : ''}
-                        </span>
-                      ))
-                    ) : (
-                      <span className="text-muted ms-1">Uncategorized</span>
-                    )}
+                    <strong>Category:</strong> 
+               <span className="text-muted ms-1">{category?.catName}</span>
+                  
+                  </div>
+
+                  <div className="mb-2">
+                    <strong>Brand:</strong> 
+               <span className="text-muted ms-1">{brand?.brandName}</span>
+                  
                   </div>
                   
                 </div>
@@ -226,20 +193,7 @@ export default function Product() {
               Description
             </button>
           </li>
-          <li className="nav-item" role="presentation">
-            <button 
-              className="nav-link" 
-              id="reviews-tab" 
-              data-bs-toggle="tab" 
-              data-bs-target="#reviews" 
-              type="button" 
-              role="tab" 
-              aria-controls="reviews" 
-              aria-selected="false"
-            >
-              Reviews
-            </button>
-          </li>
+          
           <li className="nav-item" role="presentation">
             <button 
               className="nav-link" 
@@ -251,7 +205,7 @@ export default function Product() {
               aria-controls="shipping" 
               aria-selected="false"
             >
-              Shipping & Returns
+              Shipping 
             </button>
           </li>
         </ul>
@@ -266,54 +220,23 @@ export default function Product() {
               <div className="col-md-8">
                 <h3>Product Details</h3>
                 <p className="lead">
-                  {product.fullDescription || product.description || 'No detailed description available.'}
+                  {product.description }
                 </p>
                 
-                {/* Placeholder content if no full description available */}
-                {!product.fullDescription && !product.description && (
-                  <>
-                    <p>This premium product offers exceptional quality and value. Designed with the modern consumer in mind, it combines functionality with elegant aesthetics.</p>
-                    <p>Features include:</p>
-                    <ul>
-                      <li>High-quality materials for durability</li>
-                      <li>Ergonomic design for comfort</li>
-                      <li>Versatile application</li>
-                      <li>Easy maintenance</li>
-                    </ul>
-                  </>
-                )}
+                
               </div>
-              <div className="col-md-4">
-                {product.features && (
-                  <div className="features-list">
-                    <h4>Features</h4>
-                    <ul className="list-group list-group-flush">
-                      {product.features.map((feature, idx) => (
-                        <li key={idx} className="list-group-item">{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
+              
             </div>
           </div>
-          <div 
-            className="tab-pane fade" 
-            id="reviews" 
-            role="tabpanel" 
-            aria-labelledby="reviews-tab"
-          >
-            <h3>Customer Reviews</h3>
-            <p className="text-muted">Reviews will be displayed here.</p>
-          </div>
+          
           <div 
             className="tab-pane fade" 
             id="shipping" 
             role="tabpanel" 
             aria-labelledby="shipping-tab"
           >
-            <h3>Shipping & Returns</h3>
-            <p>Free shipping on all orders over $50. Returns accepted within 30 days of purchase.</p>
+            <h3>Shipping</h3>
+            <p>Free shipping on all orders over ....</p>
           </div>
         </div>
       </div>
