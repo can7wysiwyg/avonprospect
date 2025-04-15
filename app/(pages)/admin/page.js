@@ -4,20 +4,22 @@ import { Container, Row, Col, Card } from 'react-bootstrap'
 import { 
   Tags, 
   Package, 
-  Layers, 
-  BarChart2, 
+   
   ShoppingCart, 
-  DollarSign,
   Home,
   GroupIcon
 } from 'lucide-react'
 import { getProducts } from '@/helpers/core/CoreFuncs'
 import Link from 'next/link'
+import { getSupertoken } from '@/helpers/AccessToken'
+import axios from 'axios'
+import { ApiUrl } from '@/helpers/ApiUrl'
 
 
 export default function AdminDashboard() {
   const[products, setProducts] = React.useState([])
-
+  const[carts, setCarts] = React.useState([])
+  const usertoken = getSupertoken()
 
   React.useEffect(() => {
 
@@ -28,6 +30,17 @@ export default function AdminDashboard() {
            if(items ) {
             setProducts(items.products)
            }
+
+
+           const response = await axios.get(`${ApiUrl}/admin/all_carts`, {
+            headers: {
+              Authorization: `Bearer ${usertoken}`
+            }
+           })
+
+           setCarts(response.data.carts)
+
+
 
           
           } catch (error) {
@@ -119,7 +132,11 @@ export default function AdminDashboard() {
                 <Card className="text-center h-100">
                   <Card.Body>
                     <ShoppingCart size={32} className="text-success mb-2" />
-                    <h3>156</h3>
+                    
+
+                    {
+                      carts?.length && (<h3>{carts?.length}</h3>)
+                    }
                     <Card.Text>Total Orders</Card.Text>
                   </Card.Body>
                 </Card>

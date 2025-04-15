@@ -30,7 +30,8 @@ export default function AdminProductCatalogue() {
     category: '',
     brand: '',
     inStock: false,
-    isFeatured: false
+    isFeatured: false,
+    newArrival: false
   })
   const [updtBtnLdng, setUpdtBtnLdng] = useState(false)
   const [error, setError] = useState('')
@@ -169,7 +170,8 @@ export default function AdminProductCatalogue() {
       category: product.category || '',
       brand: product.brand || '',
       inStock: product.inStock || false,
-      isFeatured: product.isFeatured || false
+      isFeatured: product.isFeatured || false,
+      newArrival: product.newArrival || false
     })
     setError('') // Clear any previous errors
   }
@@ -571,6 +573,26 @@ export default function AdminProductCatalogue() {
                                         <label className="form-check-label" htmlFor={`isFeaturedToggle-${product._id}`}>Featured Product</label>
                                       </div>
                                     </div>
+
+                                    {/* hey */}
+                                    <div className="col-md-6 mb-3">
+                                      <div className="form-check form-switch">
+                                        <input 
+                                          className="form-check-input" 
+                                          type="checkbox" 
+                                          id={`isNewArrivalToggle-${product._id}`} 
+                                          name="newArrival"
+                                          checked={data.newArrival} 
+                                          onChange={handleCheckboxChange} 
+                                        />
+                                        <label className="form-check-label" htmlFor={`isNewArrivalToggle-${product._id}`}>New Arrival Product</label>
+                                      </div>
+                                    </div>
+
+
+
+
+                                    {/* end hey */}
 
                                     <div className="col-12 mt-4">
                                       <button 
