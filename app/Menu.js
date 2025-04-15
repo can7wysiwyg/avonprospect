@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Search, 
   ShoppingCart,  
@@ -12,20 +12,23 @@ import {
 import { DashboardComp } from '@/helpers/DashboardComp';
 import { AuthCheck } from '@/helpers/AuthCheck';
 import Link from 'next/link';
+import { itemTotal } from '@/helpers/core/CartFuncs';
 
 
 export default function Menu() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(3);
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [clientReady, setClientReady] = useState(false);
+
+
+  useEffect(() => {
+    setClientReady(true);
+  }, []);
+
   
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
   
-  const toggleAuth = () => {
-    setIsAuthenticated(!isAuthenticated);
-  };
   
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-lg sticky-top py-3">
@@ -98,14 +101,18 @@ export default function Menu() {
             
       
             <li className="nav-item">
-              <Link className="nav-link position-relative p-2" href="#">
+              <Link className="nav-link position-relative p-2" href="/cart">
                 <div className="rounded-circle bg-light p-2 d-flex align-items-center justify-content-center" style={{width: '48px', height: '48px'}}>
                   <ShoppingCart size={26} className="text-primary" />
-                  {cartCount > 0 && (
-                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-6 px-2">
-                      {cartCount}
-                    </span>
-                  )}
+                
+                  
+{clientReady && (
+  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-6 px-2">
+    {itemTotal()}
+  </span>
+)}
+
+                
                 </div>
               </Link>
             </li>
