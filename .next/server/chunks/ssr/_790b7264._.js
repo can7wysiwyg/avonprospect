@@ -68,6 +68,8 @@ function ShoppingCart({ cartItems: initialCartItems }) {
     // Remove item from cart
     const removeItem = (id)=>{
         const updatedCart = cartItems.filter((item)=>item._id !== id);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CartFuncs$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["removeCartItem"])(id);
+        window.location.reload();
         setCartItems(updatedCart);
     };
     // Handle input change
@@ -158,12 +160,12 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                             color: "#ccc"
                         }, void 0, false, {
                             fileName: "[project]/app/(publico)/cart/page.js",
-                            lineNumber: 160,
+                            lineNumber: 163,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/(publico)/cart/page.js",
-                        lineNumber: 159,
+                        lineNumber: 162,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -171,7 +173,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                         children: "Your cart is empty"
                     }, void 0, false, {
                         fileName: "[project]/app/(publico)/cart/page.js",
-                        lineNumber: 162,
+                        lineNumber: 165,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -179,7 +181,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                         children: "Looks like you haven't added any items to your cart yet."
                     }, void 0, false, {
                         fileName: "[project]/app/(publico)/cart/page.js",
-                        lineNumber: 163,
+                        lineNumber: 166,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -188,18 +190,18 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                         children: "Continue Shopping"
                     }, void 0, false, {
                         fileName: "[project]/app/(publico)/cart/page.js",
-                        lineNumber: 164,
+                        lineNumber: 167,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(publico)/cart/page.js",
-                lineNumber: 158,
+                lineNumber: 161,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/(publico)/cart/page.js",
-            lineNumber: 157,
+            lineNumber: 160,
             columnNumber: 7
         }, this);
     }
@@ -214,7 +216,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                         children: step === 'cart' ? 'Shopping Cart' : 'Checkout'
                     }, void 0, false, {
                         fileName: "[project]/app/(publico)/cart/page.js",
-                        lineNumber: 175,
+                        lineNumber: 178,
                         columnNumber: 9
                     }, this),
                     step === 'checkout' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -226,14 +228,14 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                 className: "me-1"
                             }, void 0, false, {
                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                lineNumber: 182,
+                                lineNumber: 185,
                                 columnNumber: 13
                             }, this),
                             " Back to cart"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(publico)/cart/page.js",
-                        lineNumber: 178,
+                        lineNumber: 181,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -256,21 +258,6 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                             children: "Product"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                            lineNumber: 195,
-                                                            columnNumber: 23
-                                                        }, this)
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/(publico)/cart/page.js",
-                                                        lineNumber: 194,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-93535375d2b13c25" + " " + "col-2 text-center d-none d-md-block",
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
-                                                            className: "jsx-93535375d2b13c25" + " " + "mb-0",
-                                                            children: "Price"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/(publico)/cart/page.js",
                                                             lineNumber: 198,
                                                             columnNumber: 23
                                                         }, this)
@@ -280,10 +267,10 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-93535375d2b13c25" + " " + "col-2 text-center",
+                                                        className: "jsx-93535375d2b13c25" + " " + "col-2 text-center d-none d-md-block",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                                                             className: "jsx-93535375d2b13c25" + " " + "mb-0",
-                                                            children: "Quantity"
+                                                            children: "Price"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
                                                             lineNumber: 201,
@@ -295,10 +282,10 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-93535375d2b13c25" + " " + "col-2 text-end",
+                                                        className: "jsx-93535375d2b13c25" + " " + "col-2 text-center",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                                                             className: "jsx-93535375d2b13c25" + " " + "mb-0",
-                                                            children: "Total"
+                                                            children: "Quantity"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
                                                             lineNumber: 204,
@@ -308,16 +295,31 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                         fileName: "[project]/app/(publico)/cart/page.js",
                                                         lineNumber: 203,
                                                         columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "jsx-93535375d2b13c25" + " " + "col-2 text-end",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
+                                                            className: "jsx-93535375d2b13c25" + " " + "mb-0",
+                                                            children: "Total"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/(publico)/cart/page.js",
+                                                            lineNumber: 207,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/(publico)/cart/page.js",
+                                                        lineNumber: 206,
+                                                        columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                lineNumber: 193,
+                                                lineNumber: 196,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                            lineNumber: 192,
+                                            lineNumber: 195,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -345,12 +347,12 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                 className: "jsx-93535375d2b13c25" + " " + "img-fluid rounded"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                lineNumber: 216,
+                                                                                lineNumber: 219,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                                            lineNumber: 215,
+                                                                            lineNumber: 218,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -361,7 +363,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                     children: item.name
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                    lineNumber: 224,
+                                                                                    lineNumber: 227,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -372,24 +374,24 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                    lineNumber: 225,
+                                                                                    lineNumber: 228,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                                            lineNumber: 223,
+                                                                            lineNumber: 226,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                                    lineNumber: 214,
+                                                                    lineNumber: 217,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 213,
+                                                                lineNumber: 216,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -402,12 +404,12 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                                    lineNumber: 235,
+                                                                    lineNumber: 238,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 234,
+                                                                lineNumber: 237,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -424,12 +426,12 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                     size: 16
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                    lineNumber: 246,
+                                                                                    lineNumber: 249,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                lineNumber: 241,
+                                                                                lineNumber: 244,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -437,7 +439,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                 children: Math.max(1, Math.min(item.quantity, item.stockQuantity))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                lineNumber: 249,
+                                                                                lineNumber: 252,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -448,18 +450,18 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                     size: 16
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                    lineNumber: 260,
+                                                                                    lineNumber: 263,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                lineNumber: 255,
+                                                                                lineNumber: 258,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 240,
+                                                                        lineNumber: 243,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -467,13 +469,13 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         children: item.stockQuantity > 0 ? `${item.stockQuantity} available` : 'Out of stock'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 263,
+                                                                        lineNumber: 266,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 239,
+                                                                lineNumber: 242,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -487,7 +489,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 270,
+                                                                        lineNumber: 273,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -500,36 +502,36 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                 className: "me-1"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                lineNumber: 278,
+                                                                                lineNumber: 281,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             " Remove"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 273,
+                                                                        lineNumber: 276,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 269,
+                                                                lineNumber: 272,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                        lineNumber: 211,
+                                                        lineNumber: 214,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, item._id, false, {
                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                    lineNumber: 210,
+                                                    lineNumber: 213,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                            lineNumber: 208,
+                                            lineNumber: 211,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -546,14 +548,14 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                 className: "me-1"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 288,
+                                                                lineNumber: 291,
                                                                 columnNumber: 23
                                                             }, this),
                                                             " Continue Shopping"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                        lineNumber: 287,
+                                                        lineNumber: 290,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -569,30 +571,30 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                 }
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 294,
+                                                                lineNumber: 297,
                                                                 columnNumber: 43
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                        lineNumber: 290,
+                                                        lineNumber: 293,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                lineNumber: 286,
+                                                lineNumber: 289,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                            lineNumber: 285,
+                                            lineNumber: 288,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                    lineNumber: 191,
+                                    lineNumber: 194,
                                     columnNumber: 15
                                 }, this) : /* Checkout Form */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "jsx-93535375d2b13c25" + " " + "card shadow-sm",
@@ -604,12 +606,12 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                 children: "Shipping Information"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                lineNumber: 303,
+                                                lineNumber: 306,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                            lineNumber: 302,
+                                            lineNumber: 305,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -630,7 +632,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         children: "Full Name *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 309,
+                                                                        lineNumber: 312,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -644,7 +646,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         className: "jsx-93535375d2b13c25" + " " + `form-control ${errors.fullname ? 'is-invalid' : ''}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 310,
+                                                                        lineNumber: 313,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     errors.fullname && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -652,13 +654,13 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         children: errors.fullname
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 321,
+                                                                        lineNumber: 324,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 308,
+                                                                lineNumber: 311,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -670,7 +672,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         children: "Email Address *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 326,
+                                                                        lineNumber: 329,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -684,7 +686,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         className: "jsx-93535375d2b13c25" + " " + `form-control ${errors.email ? 'is-invalid' : ''}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 327,
+                                                                        lineNumber: 330,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     errors.email && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -692,13 +694,13 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         children: errors.email
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 338,
+                                                                        lineNumber: 341,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 325,
+                                                                lineNumber: 328,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -710,7 +712,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         children: "Phone Number *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 343,
+                                                                        lineNumber: 346,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -724,7 +726,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         className: "jsx-93535375d2b13c25" + " " + `form-control ${errors.phonenumber ? 'is-invalid' : ''}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 344,
+                                                                        lineNumber: 347,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     errors.phonenumber && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -732,13 +734,13 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         children: errors.phonenumber
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 355,
+                                                                        lineNumber: 358,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 342,
+                                                                lineNumber: 345,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -750,7 +752,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         children: "Full Address *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 360,
+                                                                        lineNumber: 363,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -764,7 +766,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         className: "jsx-93535375d2b13c25" + " " + `form-control ${errors.address ? 'is-invalid' : ''}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 361,
+                                                                        lineNumber: 364,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     errors.address && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -772,19 +774,19 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         children: errors.address
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 372,
+                                                                        lineNumber: 375,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                lineNumber: 359,
+                                                                lineNumber: 362,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                        lineNumber: 307,
+                                                        lineNumber: 310,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -801,7 +803,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                         className: "jsx-93535375d2b13c25" + " " + "spinner-border spinner-border-sm me-2"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                        lineNumber: 386,
+                                                                        lineNumber: 389,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     "Processing Order..."
@@ -811,34 +813,34 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                             }, void 0, false)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                            lineNumber: 379,
+                                                            lineNumber: 382,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                        lineNumber: 378,
+                                                        lineNumber: 381,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                lineNumber: 306,
+                                                lineNumber: 309,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                            lineNumber: 305,
+                                            lineNumber: 308,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                    lineNumber: 301,
+                                    lineNumber: 304,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                lineNumber: 188,
+                                lineNumber: 191,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -853,12 +855,12 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                 children: "Order Summary"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                lineNumber: 404,
+                                                lineNumber: 407,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                            lineNumber: 403,
+                                            lineNumber: 406,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -872,7 +874,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                             children: "Subtotal"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                            lineNumber: 408,
+                                                            lineNumber: 411,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -883,20 +885,20 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                            lineNumber: 409,
+                                                            lineNumber: 412,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                    lineNumber: 407,
+                                                    lineNumber: 410,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {
                                                     className: "jsx-93535375d2b13c25"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                    lineNumber: 412,
+                                                    lineNumber: 415,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -907,7 +909,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                             children: "Total"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                            lineNumber: 414,
+                                                            lineNumber: 417,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -918,13 +920,13 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                            lineNumber: 415,
+                                                            lineNumber: 418,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                    lineNumber: 413,
+                                                    lineNumber: 416,
                                                     columnNumber: 17
                                                 }, this),
                                                 step === 'cart' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -935,12 +937,12 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                         children: "Checkout"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                        lineNumber: 420,
+                                                        lineNumber: 423,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                    lineNumber: 419,
+                                                    lineNumber: 422,
                                                     columnNumber: 19
                                                 }, this),
                                                 step === 'checkout' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -955,7 +957,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                            lineNumber: 432,
+                                                            lineNumber: 435,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -979,12 +981,12 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                         className: "jsx-93535375d2b13c25" + " " + "img-fluid rounded"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                        lineNumber: 438,
+                                                                                        lineNumber: 441,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                    lineNumber: 437,
+                                                                                    lineNumber: 440,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -995,7 +997,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                             children: item.name
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                            lineNumber: 446,
+                                                                                            lineNumber: 449,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1006,19 +1008,19 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                            lineNumber: 447,
+                                                                                            lineNumber: 450,
                                                                                             columnNumber: 31
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                    lineNumber: 445,
+                                                                                    lineNumber: 448,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                                            lineNumber: 436,
+                                                                            lineNumber: 439,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1031,58 +1033,58 @@ function ShoppingCart({ cartItems: initialCartItems }) {
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                                                                lineNumber: 451,
+                                                                                lineNumber: 454,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                                            lineNumber: 450,
+                                                                            lineNumber: 453,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, item._id, true, {
                                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                                    lineNumber: 435,
+                                                                    lineNumber: 438,
                                                                     columnNumber: 25
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                                            lineNumber: 433,
+                                                            lineNumber: 436,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                                    lineNumber: 431,
+                                                    lineNumber: 434,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/(publico)/cart/page.js",
-                                            lineNumber: 406,
+                                            lineNumber: 409,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(publico)/cart/page.js",
-                                    lineNumber: 402,
+                                    lineNumber: 405,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/(publico)/cart/page.js",
-                                lineNumber: 401,
+                                lineNumber: 404,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(publico)/cart/page.js",
-                        lineNumber: 186,
+                        lineNumber: 189,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(publico)/cart/page.js",
-                lineNumber: 174,
+                lineNumber: 177,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1092,7 +1094,7 @@ function ShoppingCart({ cartItems: initialCartItems }) {
         ]
     }, void 0, true, {
         fileName: "[project]/app/(publico)/cart/page.js",
-        lineNumber: 173,
+        lineNumber: 176,
         columnNumber: 5
     }, this);
 }

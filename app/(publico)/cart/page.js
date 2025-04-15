@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Trash2, ShoppingBag, Plus, Minus, ArrowLeft, CreditCard, Truck } from 'lucide-react'
 import Link from 'next/link'
-import { getCart } from '@/helpers/core/CartFuncs'
+import { getCart, removeCartItem, emptyCartItems } from '@/helpers/core/CartFuncs'
 
 
 
@@ -57,7 +57,10 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
   // Remove item from cart
   const removeItem = (id) => {
     const updatedCart = cartItems.filter(item => item._id !== id)
+    removeCartItem(id)
+    window.location.reload()
     setCartItems(updatedCart)
+    
    
   }
 

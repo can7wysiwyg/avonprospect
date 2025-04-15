@@ -609,10 +609,10 @@ var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_
 {
 __turbopack_context__.s({
     "addItem": (()=>addItem),
-    "emptyCart": (()=>emptyCart),
+    "emptyCartItems": (()=>emptyCartItems),
     "getCart": (()=>getCart),
     "itemTotal": (()=>itemTotal),
-    "removeItem": (()=>removeItem),
+    "removeCartItem": (()=>removeCartItem),
     "updateItem": (()=>updateItem)
 });
 const addItem = (item, next)=>{
@@ -663,7 +663,7 @@ const updateItem = (itemId, count)=>{
         localStorage.setItem("cart", JSON.stringify(cart));
     }
 };
-const removeItem = (itemId)=>{
+const removeCartItem = (itemId)=>{
     let cart = [];
     if ("TURBOPACK compile-time truthy", 1) {
         if (localStorage.getItem("cart")) {
@@ -673,7 +673,7 @@ const removeItem = (itemId)=>{
         localStorage.setItem("cart", JSON.stringify(cart));
     }
 };
-const emptyCart = (next)=>{
+const emptyCartItems = (next)=>{
     if ("TURBOPACK compile-time truthy", 1) {
         localStorage.removeItem("cart");
         next();

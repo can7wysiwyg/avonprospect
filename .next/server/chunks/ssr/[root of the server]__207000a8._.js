@@ -675,10 +675,10 @@ var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
     "addItem": (()=>addItem),
-    "emptyCart": (()=>emptyCart),
+    "emptyCartItems": (()=>emptyCartItems),
     "getCart": (()=>getCart),
     "itemTotal": (()=>itemTotal),
-    "removeItem": (()=>removeItem),
+    "removeCartItem": (()=>removeCartItem),
     "updateItem": (()=>updateItem)
 });
 const addItem = (item, next)=>{
@@ -705,13 +705,13 @@ const updateItem = (itemId, count)=>{
         "TURBOPACK unreachable";
     }
 };
-const removeItem = (itemId)=>{
+const removeCartItem = (itemId)=>{
     let cart = [];
     if ("TURBOPACK compile-time falsy", 0) {
         "TURBOPACK unreachable";
     }
 };
-const emptyCart = (next)=>{
+const emptyCartItems = (next)=>{
     if ("TURBOPACK compile-time falsy", 0) {
         "TURBOPACK unreachable";
     }
