@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react'
 import { Trash2, ShoppingBag, Plus, Minus, ArrowLeft, CreditCard, Truck } from 'lucide-react'
 import Link from 'next/link'
 import { getCart, removeCartItem, emptyCartItems } from '@/helpers/core/CartFuncs'
+import axios from 'axios'
+import { ApiUrl } from '@/helpers/ApiUrl'
+import { getSupertoken } from '@/helpers/AccessToken'
 
 
 
@@ -17,6 +20,7 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errors, setErrors] = useState({})
+  const usertoken = getSupertoken()
 
   useEffect(() => {
     const items = getCart().map(item => ({ ...item, quantity: 1 }));
@@ -129,21 +133,29 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
       }
       
     
-      console.log('Submitting cart:', cartData)
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
+      const response = await axios.post(`${ApiUrl}/shopper/add_to_cart`, cartData, {
+        headers: {
+          Authorization: `Bearer ${usertoken}`
+        }
+      })
       
-      // On success
-      alert('Order placed successfully!')
-      // Clear cart and reset form
-      setCartItems([])
+      
+      if(response.data.msg) {
+        alert(response.data.msg)
+        setCartItems([])
+        emptyCartItems()
+        window.location.reload()
       setFormData({
         fullname: '',
         email: '',
         phonenumber: '',
         address: '',
       })
+
+      }
+            
+      
       // Return to cart view
       setStep('cart')
     } catch (error) {

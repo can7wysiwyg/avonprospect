@@ -1,4 +1,7 @@
 {
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(auth)/recover/page": "app/(auth)/recover/page.js",
+  "/(auth)/reset/[usertoken]/page": "app/(auth)/reset/[usertoken]/page.js",
   "/(publico)/[productId]/page": "app/(publico)/[productId]/page.js",
   "/(publico)/cart/page": "app/(publico)/cart/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",

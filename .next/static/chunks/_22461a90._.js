@@ -676,7 +676,6 @@ const removeCartItem = (itemId)=>{
 const emptyCartItems = (next)=>{
     if ("TURBOPACK compile-time truthy", 1) {
         localStorage.removeItem("cart");
-        next();
     }
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
