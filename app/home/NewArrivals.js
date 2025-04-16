@@ -86,15 +86,16 @@ export default function NewArrivals() {
               pagination={{ clickable: true }}
               className="products-carousel"
               breakpoints={{
-                640: {
+                
+                576: { // Small screens
+                  slidesPerView: 1,
+                },
+                768: { // Medium screens
                   slidesPerView: 2,
                 },
-                768: {
+                992: { // Large screens and above
                   slidesPerView: 3,
-                },
-                1024: {
-                  slidesPerView: 4,
-                },
+                }
               }}
             >
               {products.map((product) => (
@@ -112,7 +113,7 @@ export default function NewArrivals() {
                           alt={product.name}
                           style={{
                             objectFit: "contain",
-                            width: "300px",
+                            width: "100%", // Changed to 100% to fill the column width
                             maxHeight: "200px",
                             padding: "10px",
                           }}
@@ -158,7 +159,6 @@ export default function NewArrivals() {
         </div>
       </section>
       <style jsx global>
-        
         {`
           .products-carousel {
             padding-bottom: 50px;

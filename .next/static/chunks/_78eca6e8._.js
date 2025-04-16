@@ -1,4 +1,4 @@
-(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push(["static/chunks/_2eeb3ce8._.js", {
+(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push(["static/chunks/_78eca6e8._.js", {
 
 "[project]/app/home/CatAdvertisment.js [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
@@ -360,6 +360,395 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
+"[project]/app/home/Catalogue.js [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "default": (()=>Catalogue)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/styled-jsx/style.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CoreFuncs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/helpers/core/CoreFuncs.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shopping-cart.js [app-client] (ecmascript) <export default as ShoppingCart>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CartFuncs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/helpers/core/CartFuncs.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+;
+;
+;
+;
+function Catalogue() {
+    _s();
+    const [categories, setCategories] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [products, setProducts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [filteredProducts, setFilteredProducts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [activeFilter, setActiveFilter] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('all');
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [redirect, setRedirect] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const shouldRedirect = (redirect)=>{
+        if (redirect) {
+            return window.location.href = "/cart";
+        }
+    };
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Catalogue.useEffect": ()=>{
+            const fetchData = {
+                "Catalogue.useEffect.fetchData": async ()=>{
+                    try {
+                        setLoading(true);
+                        const prods = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CoreFuncs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getProducts"])();
+                        const cats = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CoreFuncs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getCategories"])();
+                        if (prods && cats) {
+                            setProducts(prods.products);
+                            setFilteredProducts(prods.products);
+                            // Limit to 4 categories max
+                            const limitedCats = cats.categories.slice(0, 4);
+                            setCategories(limitedCats);
+                        }
+                    } catch (error) {
+                        console.log("There was a problem fetching data:", error);
+                    } finally{
+                        setLoading(false);
+                    }
+                }
+            }["Catalogue.useEffect.fetchData"];
+            fetchData();
+        }
+    }["Catalogue.useEffect"], []);
+    // Filter products based on category
+    const filterProducts = (categoryId)=>{
+        setActiveFilter(categoryId);
+        if (categoryId === 'all') {
+            //12 products max for display
+            setFilteredProducts(products.slice(0, 12));
+        } else {
+            const filtered = products.filter((product)=>product.category === categoryId);
+            //4 products per category  
+            setFilteredProducts(filtered.slice(0, 4));
+        }
+    };
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Catalogue.useEffect": ()=>{
+            if (products.length > 0) {
+                setFilteredProducts(products.slice(0, 12));
+            }
+        }
+    }["Catalogue.useEffect"], [
+        products
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+        children: [
+            shouldRedirect(redirect),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                id: "products",
+                className: "jsx-dd857939cd5413d6" + " " + "my-5",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "jsx-dd857939cd5413d6" + " " + "container my-5 py-5",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "jsx-dd857939cd5413d6" + " " + "section-header d-md-flex justify-content-between align-items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "jsx-dd857939cd5413d6" + " " + "display-3 fw-normal",
+                                    children: "Our Products"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/home/Catalogue.js",
+                                    lineNumber: 78,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "jsx-dd857939cd5413d6" + " " + "mb-4 mb-md-0",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "jsx-dd857939cd5413d6" + " " + "m-0",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>filterProducts('all'),
+                                                className: "jsx-dd857939cd5413d6" + " " + `filter-button me-4 ${activeFilter === 'all' ? 'active' : ''}`,
+                                                children: "ALL"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/home/Catalogue.js",
+                                                lineNumber: 81,
+                                                columnNumber: 33
+                                            }, this),
+                                            categories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>filterProducts(category._id),
+                                                    className: "jsx-dd857939cd5413d6" + " " + `filter-button me-4 ${activeFilter === category._id ? 'active' : ''}`,
+                                                    children: category.catName.toUpperCase()
+                                                }, category._id, false, {
+                                                    fileName: "[project]/app/home/Catalogue.js",
+                                                    lineNumber: 89,
+                                                    columnNumber: 37
+                                                }, this))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/home/Catalogue.js",
+                                        lineNumber: 80,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/app/home/Catalogue.js",
+                                    lineNumber: 79,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "jsx-dd857939cd5413d6",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/products",
+                                        className: "btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1",
+                                        children: [
+                                            "shop now",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                width: "24",
+                                                height: "24",
+                                                viewBox: "0 0 24 24",
+                                                className: "jsx-dd857939cd5413d6" + " " + "mb-1",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("use", {
+                                                    xlinkHref: "#arrow-right",
+                                                    className: "jsx-dd857939cd5413d6"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/home/Catalogue.js",
+                                                    lineNumber: 103,
+                                                    columnNumber: 37
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/home/Catalogue.js",
+                                                lineNumber: 102,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/home/Catalogue.js",
+                                        lineNumber: 100,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/app/home/Catalogue.js",
+                                    lineNumber: 99,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/home/Catalogue.js",
+                            lineNumber: 77,
+                            columnNumber: 21
+                        }, this),
+                        loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "jsx-dd857939cd5413d6" + " " + "text-center py-5",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                role: "status",
+                                className: "jsx-dd857939cd5413d6" + " " + "spinner-border text-primary",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "jsx-dd857939cd5413d6" + " " + "visually-hidden",
+                                    children: "Loading..."
+                                }, void 0, false, {
+                                    fileName: "[project]/app/home/Catalogue.js",
+                                    lineNumber: 112,
+                                    columnNumber: 33
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/home/Catalogue.js",
+                                lineNumber: 111,
+                                columnNumber: 29
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/app/home/Catalogue.js",
+                            lineNumber: 110,
+                            columnNumber: 25
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "jsx-dd857939cd5413d6" + " " + "row",
+                            children: filteredProducts.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "jsx-dd857939cd5413d6" + " " + "col-md-4 my-4",
+                                    children: [
+                                        " ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "jsx-dd857939cd5413d6" + " " + "position-relative",
+                                            children: [
+                                                product.newArrival && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "jsx-dd857939cd5413d6" + " " + "z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle",
+                                                    children: "New"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/home/Catalogue.js",
+                                                    lineNumber: 121,
+                                                    columnNumber: 45
+                                                }, this),
+                                                product.isStock === false && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "jsx-dd857939cd5413d6" + " " + "z-1 position-absolute rounded-3 m-3 px-3 border border-danger bg-danger-subtle text-danger",
+                                                    children: "Out of Stock"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/home/Catalogue.js",
+                                                    lineNumber: 127,
+                                                    columnNumber: 45
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "jsx-dd857939cd5413d6" + " " + `card position-relative ${product.isStock === false ? 'out-of-stock' : ''}`,
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                            href: `/${product._id}`,
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                                src: product.photo,
+                                                                alt: product.name,
+                                                                style: {
+                                                                    objectFit: "contain",
+                                                                    width: "100%",
+                                                                    height: "200px",
+                                                                    padding: "10px"
+                                                                },
+                                                                className: "jsx-dd857939cd5413d6" + " " + `img-fluid rounded-4 ${product.isStock === false ? 'opacity-50' : ''}`
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/home/Catalogue.js",
+                                                                lineNumber: 133,
+                                                                columnNumber: 49
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/home/Catalogue.js",
+                                                            lineNumber: 132,
+                                                            columnNumber: 45
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "jsx-dd857939cd5413d6" + " " + "card-body p-0",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                    href: `/${product._id}`,
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                        className: "jsx-dd857939cd5413d6" + " " + "card-title pt-4 m-0",
+                                                                        children: product.name
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/home/Catalogue.js",
+                                                                        lineNumber: 147,
+                                                                        columnNumber: 53
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/home/Catalogue.js",
+                                                                    lineNumber: 146,
+                                                                    columnNumber: 49
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "jsx-dd857939cd5413d6" + " " + "card-text",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                            className: "jsx-dd857939cd5413d6" + " " + "secondary-font text-primary",
+                                                                            children: [
+                                                                                "MWK",
+                                                                                product.price
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/app/home/Catalogue.js",
+                                                                            lineNumber: 151,
+                                                                            columnNumber: 53
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "jsx-dd857939cd5413d6" + " " + "d-flex flex-wrap mt-3",
+                                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                disabled: product.inStock === false,
+                                                                                onClick: ()=>{
+                                                                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CartFuncs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addItem"])(product, ()=>{
+                                                                                        setRedirect(true);
+                                                                                    });
+                                                                                },
+                                                                                className: "jsx-dd857939cd5413d6" + " " + `btn-cart me-3 px-4 pt-3 pb-3 ${product.inStock === false ? 'disabled' : ''}`,
+                                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                    className: "jsx-dd857939cd5413d6" + " " + "d-flex align-items-center",
+                                                                                    children: [
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__["ShoppingCart"], {
+                                                                                            size: 18,
+                                                                                            className: "me-2"
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/app/home/Catalogue.js",
+                                                                                            lineNumber: 165,
+                                                                                            columnNumber: 65
+                                                                                        }, this),
+                                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
+                                                                                            className: "jsx-dd857939cd5413d6" + " " + "text-uppercase m-0",
+                                                                                            children: product.inStock === false ? 'Out of Stock' : 'Add to Cart'
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/app/home/Catalogue.js",
+                                                                                            lineNumber: 166,
+                                                                                            columnNumber: 65
+                                                                                        }, this)
+                                                                                    ]
+                                                                                }, void 0, true, {
+                                                                                    fileName: "[project]/app/home/Catalogue.js",
+                                                                                    lineNumber: 164,
+                                                                                    columnNumber: 61
+                                                                                }, this)
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/app/home/Catalogue.js",
+                                                                                lineNumber: 154,
+                                                                                columnNumber: 57
+                                                                            }, this)
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/app/home/Catalogue.js",
+                                                                            lineNumber: 153,
+                                                                            columnNumber: 53
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/app/home/Catalogue.js",
+                                                                    lineNumber: 150,
+                                                                    columnNumber: 49
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/app/home/Catalogue.js",
+                                                            lineNumber: 145,
+                                                            columnNumber: 45
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/home/Catalogue.js",
+                                                    lineNumber: 131,
+                                                    columnNumber: 41
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/home/Catalogue.js",
+                                            lineNumber: 119,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, product._id, true, {
+                                    fileName: "[project]/app/home/Catalogue.js",
+                                    lineNumber: 118,
+                                    columnNumber: 33
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/app/home/Catalogue.js",
+                            lineNumber: 116,
+                            columnNumber: 25
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/home/Catalogue.js",
+                    lineNumber: 76,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/home/Catalogue.js",
+                lineNumber: 75,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                id: "dd857939cd5413d6",
+                children: '.filter-button{cursor:pointer;background:0 0;border:none;padding:5px 0;font-weight:500;transition:color .3s;position:relative}.filter-button:after{content:"";background-color:#0d6efd;width:0;height:2px;transition:width .3s;position:absolute;bottom:0;left:0}.filter-button:hover:after,.filter-button.active:after{width:100%}.filter-button.active{color:#0d6efd}.btn-cart{color:#fff;background-color:#212529;border:none;border-radius:4px;text-decoration:none;transition:all .3s;display:inline-block}.btn-cart:hover{background-color:#0d6efd;transform:translateY(-2px)}.btn-cart.disabled{cursor:not-allowed;opacity:.65;pointer-events:none;background-color:#6c757d}.btn-wishlist{color:#212529;background:0 0;border:1px solid #dee2e6;border-radius:4px;transition:all .3s}.btn-wishlist:hover{background-color:#f8f9fa;transform:translateY(-2px)}.card{border:none;margin-bottom:20px;transition:all .3s}.card:hover{transform:translateY(-5px);box-shadow:0 10px 20px #0000001a}.card.out-of-stock:hover{transform:translateY(-2px);box-shadow:0 5px 10px #0000000d}.card-title{color:#212529;font-size:1.1rem;font-weight:500;transition:color .3s}.card-title:hover{color:#0d6efd}.secondary-font{font-weight:600}.z-1{z-index:1;background-color:#fff;font-size:.8rem;font-weight:600}a{text-decoration:none}@media (width<=767px){.section-header{text-align:center}.section-header .btn{margin-top:1rem}.display-3{font-size:2.5rem}}'
+            }, void 0, false, void 0, this)
+        ]
+    }, void 0, true);
+}
+_s(Catalogue, "pSVhMNr9gVDtfDh4koQMKC6jXlw=");
+_c = Catalogue;
+var _c;
+__turbopack_context__.k.register(_c, "Catalogue");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
 "[project]/app/home/NewArrivals.js [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -524,7 +913,6 @@ function NewArrivals() {
                             },
                             className: "products-carousel",
                             breakpoints: {
-                                // Modified breakpoints to show 3 columns consistently on larger screens
                                 576: {
                                     slidesPerView: 1
                                 },
@@ -996,4 +1384,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }}),
 }]);
 
-//# sourceMappingURL=_2eeb3ce8._.js.map
+//# sourceMappingURL=_78eca6e8._.js.map
