@@ -4,6 +4,7 @@
   "/(pages)/admin/products/page": "app/(pages)/admin/products/page.js",
   "/(publico)/[productId]/page": "app/(publico)/[productId]/page.js",
   "/(publico)/cart/page": "app/(publico)/cart/page.js",
+  "/(publico)/products/page": "app/(publico)/products/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"
 }

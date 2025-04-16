@@ -1,7 +1,7 @@
 'use client'
 
 import { getCategories, getProducts } from '@/helpers/core/CoreFuncs'
-import { ShoppingCart, Heart } from 'lucide-react'
+import { ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { addItem } from "@/helpers/core/CartFuncs";
