@@ -72,16 +72,16 @@ export default function Menu() {
                 <ChevronDown size={18} className="ms-1" />
               </Link>
               <ul className="dropdown-menu border-0 shadow-lg p-2">
-                <li><Link className="dropdown-item fs-6 py-2" href="#">Shirts</Link></li>
-                <li><Link className="dropdown-item fs-6 py-2" href="#">Pants</Link></li>
-                <li><Link className="dropdown-item fs-6 py-2" href="#">Outerwear</Link></li>
+                <li><Link className="dropdown-item fs-6 py-2" href="/">Shirts</Link></li>
+                <li><Link className="dropdown-item fs-6 py-2" href="/">Pants</Link></li>
+                <li><Link className="dropdown-item fs-6 py-2" href="/">Outerwear</Link></li>
                 <li><hr className="dropdown-divider" /></li>
                 
               </ul>
             </li>
             
             <li className="nav-item">
-              <Link className="nav-link fw-semibold fs-5 px-3" href="#">New Arrivals</Link>
+              <Link className="nav-link fw-semibold fs-5 px-3" href="/">New Arrivals</Link>
             </li>
           </ul>
           

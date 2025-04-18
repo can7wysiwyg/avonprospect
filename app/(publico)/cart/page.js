@@ -175,7 +175,7 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
             <ShoppingBag size={80} color="#ccc" />
           </div>
           <h2 className="mb-3">Your cart is empty</h2>
-          <p className="text-muted mb-4">Looks like you haven't added any items to your cart yet.</p>
+          <p className="text-muted mb-4">Looks like you have not added any items to your cart yet.</p>
           <Link href="/products" className="btn btn-primary btn-lg">
             Continue Shopping
           </Link>

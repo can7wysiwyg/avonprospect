@@ -93,7 +93,7 @@ export default function Products() {
     setFilteredProducts(result)
     setCurrentPage(1) // Reset to first page when filters change
     setTotalPages(Math.ceil(result.length / productsPerPage))
-  }, [products, selectedCategory, selectedBrand, searchQuery, sortBy])
+  }, [products, selectedCategory, selectedBrand, searchQuery, sortBy, productsPerPage])
 
   // Effect for pagination
   useEffect(() => {

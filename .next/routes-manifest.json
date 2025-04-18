@@ -45,6 +45,14 @@
         "nxtPusertoken": "nxtPusertoken"
       },
       "namedRegex": "^/reset/(?<nxtPusertoken>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[productId]",
+      "regex": "^/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPproductId": "nxtPproductId"
+      },
+      "namedRegex": "^/(?<nxtPproductId>[^/]+?)(?:/)?$"
     }
   ],
   "staticRoutes": [
@@ -121,6 +129,12 @@
       "namedRegex": "^/admin/products/upload(?:/)?$"
     },
     {
+      "page": "/cart",
+      "regex": "^/cart(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cart(?:/)?$"
+    },
+    {
       "page": "/favicon.ico",
       "regex": "^/favicon\\.ico(?:/)?$",
       "routeKeys": {},
@@ -131,6 +145,12 @@
       "regex": "^/login(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/products",
+      "regex": "^/products(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/products(?:/)?$"
     },
     {
       "page": "/recover",

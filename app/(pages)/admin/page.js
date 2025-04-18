@@ -50,7 +50,7 @@ export default function AdminDashboard() {
         fetchData()
 
 
-  }, [])
+  }, [usertoken])
 
  
   return (
