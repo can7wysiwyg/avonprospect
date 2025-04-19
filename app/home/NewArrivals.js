@@ -104,53 +104,55 @@ export default function NewArrivals() {
                     <div className="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
                       New
                     </div>
-
-                    <div className="card position-relative">
+                    <div className="card h-100 border-0 shadow-sm product-card">
+                    <div className=" position-relative">
                       <Link href={`/${product._id}`}>
                         <img
                           src={product.photo}
-                          className="img-fluid rounded-4"
-                          alt={product.name}
-                          style={{
-                            objectFit: "contain",
-                            width: "100%", // Changed to 100% to fill the column width
-                            maxHeight: "200px",
-                            padding: "10px",
-                          }}
+                          
+                          className="card-img-top"
+                            alt={product.name}
+                            style={{ height: '200px', objectFit: 'cover' }}
                         />
                       </Link>
+
                       <div className="card-body p-0">
                         <Link href={`/${product._id}`}>
                           <h3 className="card-title pt-4 m-0">
                             {product.name}
                           </h3>
                         </Link>
-
-                        <div className="card-text">
-                          <h3 className="secondary-font text-primary">
+                        <div className="d-flex justify-content-between align-items-center mt-3">
+                        <span className="fw-bold text-primary">
                             MWK{product.price}
-                          </h3>
+                          </span>
 
-                          <div className="d-flex flex-wrap mt-3">
+                         
                             <button
-                              className="btn-cart me-3 px-4 pt-3 pb-3"
+                              className="btn btn-primary btn-sm"
                               onClick={() => {
                                 addItem(product, () => {
                                   setRedirect(true);
                                 });
                               }}
                             >
-                              <div className="d-flex align-items-center">
-                                <ShoppingCart size={18} className="me-2" />
-                                <h5 className="text-uppercase m-0">
+                              
+                                <ShoppingCart size={18} className="me-1" />
                                   Add to Cart
-                                </h5>
-                              </div>
+                                
                             </button>
+
+
                           </div>
-                        </div>
-                      </div>
-                    </div>
+
+                            
+                    
+                  
+                  </div>
+                  </div>
+                  </div>
+                
+
                   </div>
                 </SwiperSlide>
               ))}
@@ -188,43 +190,7 @@ export default function NewArrivals() {
             background: #212529;
           }
 
-          .btn-cart {
-            background-color: #212529;
-            color: white;
-            border-radius: 4px;
-            border: none;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-          }
-
-          .btn-cart:hover {
-            background-color: #0d6efd;
-            transform: translateY(-2px);
-          }
-
-          .card {
-            border: none;
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
-          }
-
-          .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-          }
-
-          .card-title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #212529;
-            transition: color 0.3s ease;
-          }
-
-          .card-title:hover {
-            color: #0d6efd;
-          }
-
+          
           .secondary-font {
             font-weight: 600;
           }

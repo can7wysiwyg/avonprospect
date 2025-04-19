@@ -115,7 +115,8 @@ export default function Catalogue() {
                     ) : (
                         <div className="row">
                             {filteredProducts.map(product => (
-                                <div key={product._id} className="col-md-4 my-4"> {/* 3 columns per row */}
+                                <div key={product._id} className="col-md-4 my-4">
+                                 <div className="card h-100 border-0 shadow-sm product-card">
                                     <div className="position-relative">
                                         {product.newArrival && (
                                             <div className="z-1 position-absolute rounded-3 m-3 px-3 border border-dark-subtle">
@@ -132,27 +133,24 @@ export default function Catalogue() {
                                             <Link href={`/${product._id}`}>
                                                 <img 
                                                     src={product.photo} 
-                                                    className={`img-fluid rounded-4 ${product.isStock === false ? 'opacity-50' : ''}`}
+                                                    className={`card-img-top ${product.isStock === false ? 'opacity-50' : ''}`}
                                                     alt={product.name}
-                                                    style={{
-                                                        objectFit: "contain",
-                                                        width: "100%",
-                                                        height: "200px",
-                                                        padding: "10px"
-                                                    }}
+                                                    style={{ height: '200px', objectFit: 'cover' }}
                                                 />
                                             </Link>
                                             <div className="card-body p-0">
                                                 <Link href={`/${product._id}`}>
-                                                    <h3 className="card-title pt-4 m-0">{product.name}</h3>
+                                                    <h5 className="card-title pt-4 m-0">{product.name}</h5>
                                                 </Link>
 
-                                                <div className="card-text">
-                                                    <h3 className="secondary-font text-primary">MWK{product.price}</h3>
+                                                <div className="d-flex justify-content-between align-items-center mt-3">
+                                                <span className="fw-bold text-primary">
+                            MWK{product.price}
+                          </span>
 
-                                                    <div className="d-flex flex-wrap mt-3">
+                                                
                                                         <button 
-                                                            className={`btn-cart me-3 px-4 pt-3 pb-3 ${product.inStock === false ? 'disabled' : ''}`}
+                                                            className={`btn btn-primary btn-sm ${product.inStock === false ? 'disabled' : ''}`}
                                                             disabled={product.inStock === false}
 
                                                             onClick={() => {
@@ -161,18 +159,19 @@ export default function Catalogue() {
                                                                 });
                                                               }}
                                                         >
-                                                            <div className="d-flex align-items-center"  >
-                                                                <ShoppingCart size={18} className="me-2" />
-                                                                <h5 className="text-uppercase m-0">
+                                                            
+                                                                <ShoppingCart size={18} className="me-1" />
+                                                                <span className="text-uppercase m-0">
                                                                     {product.inStock === false ? 'Out of Stock' : 'Add to Cart'}
-                                                                </h5>
-                                                            </div>
+                                                                </span>
+                                                        
                                                         </button>
                                                         
-                                                    </div>
+                                                
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                     </div>
                                 </div>
                             ))}
@@ -212,15 +211,6 @@ export default function Catalogue() {
                     color: #0d6efd;
                 }
                 
-                .btn-cart {
-                    background-color: #212529;
-                    color: white;
-                    border-radius: 4px;
-                    border: none;
-                    transition: all 0.3s ease;
-                    text-decoration: none;
-                    display: inline-block;
-                }
                 
                 .btn-cart:hover {
                     background-color: #0d6efd;
@@ -234,24 +224,7 @@ export default function Catalogue() {
                     pointer-events: none;
                 }
                 
-                .btn-wishlist {
-                    background: transparent;
-                    border: 1px solid #dee2e6;
-                    border-radius: 4px;
-                    color: #212529;
-                    transition: all 0.3s ease;
-                }
                 
-                .btn-wishlist:hover {
-                    background-color: #f8f9fa;
-                    transform: translateY(-2px);
-                }
-                
-                .card {
-                    border: none;
-                    transition: all 0.3s ease;
-                    margin-bottom: 20px;
-                }
                 
                 .card:hover {
                     transform: translateY(-5px);
@@ -263,22 +236,7 @@ export default function Catalogue() {
                     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
                 }
                 
-                .card-title {
-                    font-size: 1.1rem;
-                    font-weight: 500;
-                    color: #212529;
-                    transition: color 0.3s ease;
-                }
-                
-                .card-title:hover {
-                    color: #0d6efd;
-                }
-                
-                .secondary-font {
-                    font-weight: 600;
-                }
-                
-                .z-1 {
+                               .z-1 {
                     z-index: 1;
                     background-color: white;
                     font-weight: 600;

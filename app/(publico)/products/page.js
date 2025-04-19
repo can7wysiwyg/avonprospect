@@ -369,7 +369,7 @@ export default function Products() {
                     <div className="col" key={product._id}>
                       <div className="card h-100 border-0 shadow-sm product-card">
                         <div className="position-relative">
-                          <img 
+                          <img
                             src={product.photo} 
                             className="card-img-top"
                             alt={product.name}
