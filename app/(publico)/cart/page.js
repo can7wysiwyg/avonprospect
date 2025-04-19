@@ -7,8 +7,6 @@ import axios from 'axios'
 import { ApiUrl } from '@/helpers/ApiUrl'
 import { getSupertoken } from '@/helpers/AccessToken'
 
-
-
 export default function ShoppingCart({ cartItems: initialCartItems }) {
   const [cartItems, setCartItems] = useState([])
   const [step, setStep] = useState('cart') // 'cart' or 'checkout'
@@ -27,18 +25,14 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
     setCartItems(items);
   }, []);
 
-
-
-
   const subtotal = cartItems.reduce((acc, item) => {
     return acc + (item.price * item.quantity)
   }, 0)
 
-  
-   const shippingCost = subtotal > 100 ? 0 : 15
+  const shippingCost = subtotal > 100 ? 0 : 15
 
   // Total cost
-   const total = subtotal + shippingCost
+  const total = subtotal + shippingCost
 
   // Update quantity
   const updateQuantity = (id, newQuantity) => {
@@ -55,7 +49,6 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
       item._id === id ? { ...item, quantity: newQuantity } : item
     )
     setCartItems(updatedCart)
-   
   }
 
   // Remove item from cart
@@ -64,8 +57,6 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
     removeCartItem(id)
     window.location.reload()
     setCartItems(updatedCart)
-    
-   
   }
 
   // Handle input change
@@ -132,29 +123,24 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
         amount: total
       }
       
-    
-      
       const response = await axios.post(`${ApiUrl}/shopper/add_to_cart`, cartData, {
         headers: {
           Authorization: `Bearer ${usertoken}`
         }
       })
       
-      
       if(response.data.msg) {
         alert(response.data.msg)
         setCartItems([])
         emptyCartItems()
         window.location.reload()
-      setFormData({
-        fullname: '',
-        email: '',
-        phonenumber: '',
-        address: '',
-      })
-
+        setFormData({
+          fullname: '',
+          email: '',
+          phonenumber: '',
+          address: '',
+        })
       }
-            
       
       // Return to cart view
       setStep('cart')
@@ -186,7 +172,7 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
 
   return (
     <div className="shopping-cart">
-      <div className="container py-5">
+      <div className="container py-4">
         <h1 className="mb-4 fw-bold">{step === 'cart' ? 'Shopping Cart' : 'Checkout'}</h1>
         
         {step === 'checkout' && (
@@ -199,17 +185,21 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
         )}
         
         <div className="row g-4">
-          {/* Cart Items or Checkout Form */}
           <div className="col-lg-8">
             {step === 'cart' ? (
-              /* Cart Items */
               <div className="card shadow-sm">
-                <div className="card-header bg-white py-3">
+                {/* Mobile cart items header - only visible on small screens */}
+                <div className="card-header bg-white py-3 d-md-none">
+                  <h5 className="mb-0">Your Items</h5>
+                </div>
+                
+                {/* Desktop cart items header - hidden on small screens */}
+                <div className="card-header bg-white py-3 d-none d-md-block">
                   <div className="row align-items-center">
                     <div className="col-6">
                       <h5 className="mb-0">Product</h5>
                     </div>
-                    <div className="col-2 text-center d-none d-md-block">
+                    <div className="col-2 text-center">
                       <h5 className="mb-0">Price</h5>
                     </div>
                     <div className="col-2 text-center">
@@ -220,6 +210,7 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
                     </div>
                   </div>
                 </div>
+                
                 <div className="card-body p-0">
                   {cartItems.map((item) => (
                     <div key={item._id} className="cart-item border-bottom p-3">
@@ -232,43 +223,40 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
                                 src={item.photo} 
                                 alt={item.name} 
                                 className="img-fluid rounded"
-                                style={{ maxWidth: '80px', maxHeight: '80px', objectFit: 'cover' }}
+                                style={{ width: '80px', height: '80px', objectFit: 'cover' }}
                               />
                             </div>
                             <div className="cart-item-details">
                               <h6 className="mb-1">{item.name}</h6>
-                              <div className="text-muted small d-md-none">
-                                MWK{item.price}
+                              <div className="d-md-none">
+                                <span className="fw-bold me-2">Price:</span>
+                                <span className="fw-bold">MWK{item.price}</span>
                               </div>
-                              
                             </div>
                           </div>
                         </div>
                         
-                        {/* Price */}
+                        {/* Price - desktop only */}
                         <div className="col-md-2 col-12 text-center d-none d-md-block">
                           <div className="fw-bold">MWK{item.price}</div>
                         </div>
                         
                         {/* Quantity */}
                         <div className="col-md-2 col-6 text-center">
+                          <div className="d-md-none mb-1 fw-medium">Quantity:</div>
                           <div className="quantity-control d-flex align-items-center justify-content-center">
                             <button 
-                              className="btn btn-sm btn-outline-secondary border-0"
+                              className="btn btn-sm btn-outline-secondary quantity-btn"
                               onClick={() => updateQuantity(item._id, item.quantity - 1)}
                               aria-label="Decrease quantity"
                             >
                               <Minus size={16} />
                             </button>
-
-                            <span>
-  {Math.max(1, Math.min(item.quantity, item.stockQuantity))}
-</span>
-
-
-                           
+                            <span className="quantity-display">
+                              {Math.max(1, Math.min(item.quantity, item.stockQuantity))}
+                            </span>
                             <button 
-                              className="btn btn-sm btn-outline-secondary border-0"
+                              className="btn btn-sm btn-outline-secondary quantity-btn"
                               onClick={() => updateQuantity(item._id, item.quantity + 1)}
                               aria-label="Increase quantity"
                             >
@@ -282,6 +270,7 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
                         
                         {/* Item Total & Remove */}
                         <div className="col-md-2 col-6 text-end">
+                          <div className="d-md-none mb-1 fw-medium">Total:</div>
                           <div className="fw-bold mb-2">
                             MWK{(item.price * item.quantity)}
                           </div>
@@ -297,13 +286,14 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
                     </div>
                   ))}
                 </div>
+                
                 <div className="card-footer bg-white py-3">
-                  <div className="d-flex justify-content-between align-items-center">
-                    <Link href="/products" className="btn btn-outline-secondary">
+                  <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
+                    <Link href="/products" className="btn btn-outline-secondary w-100 w-sm-auto">
                       <ArrowLeft size={18} className="me-1" /> Continue Shopping
                     </Link>
                     <button 
-                      className="btn btn-primary"
+                      className="btn btn-primary w-100 w-sm-auto"
                       onClick={() => setStep('checkout')}
                     >
                       Proceed to Checkout <ArrowLeft size={18} className="ms-1" style={{ transform: 'rotate(180deg)' }} />
@@ -389,7 +379,6 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
                       </div>
                     </div>
                     
-                                      
                     <div className="d-grid mt-4">
                       <button 
                         type="submit" 
@@ -431,9 +420,9 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
                 </div>
                 
                 {step === 'cart' && (
-                  <div className="d-grid mt-3">
+                  <div className="d-grid mt-3 d-lg-block d-none">
                     <button 
-                      className="btn btn-primary btn-lg"
+                      className="btn btn-primary btn-lg w-100"
                       onClick={() => setStep('checkout')}
                     >
                       Checkout
@@ -472,9 +461,6 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
                 )}
               </div>
             </div>
-            
-            
-
           </div>
         </div>
       </div>
@@ -498,6 +484,30 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
           -moz-appearance: textfield;
         }
         
+        .quantity-control {
+          max-width: 120px;
+          margin: 0 auto;
+        }
+        
+        .quantity-display {
+          display: inline-block;
+          min-width: 30px;
+          padding: 0 5px;
+          font-weight: 500;
+        }
+        
+        .quantity-btn {
+          border-radius: 4px;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          margin: 0 5px;
+          border: 1px solid #dee2e6;
+        }
+        
         .summary-items {
           max-height: 300px;
           overflow-y: auto;
@@ -508,9 +518,27 @@ export default function ShoppingCart({ cartItems: initialCartItems }) {
           box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           .cart-item {
             padding: 15px 10px;
+          }
+          
+          .cart-item-image {
+            width: 70px;
+          }
+          
+          .quantity-control {
+            margin: 0;
+          }
+          
+          .fw-medium {
+            font-weight: 500;
+          }
+        }
+        
+        @media (min-width: 576px) {
+          .w-sm-auto {
+            width: auto !important;
           }
         }
       `}</style>
