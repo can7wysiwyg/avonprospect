@@ -363,121 +363,148 @@ export default function Products() {
                 </div>
               </div>
               
-              {viewMode === 'grid' ? (
-                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                  {displayedProducts.map(product => (
-                    <div className="col" key={product._id}>
-                      <div className="card h-100 border-0 shadow-sm product-card">
-                        <div className="position-relative">
-                          <img
-                            src={product.photo} 
-                            className="card-img-top"
-                            alt={product.name}
-                            style={{ height: '200px', objectFit: 'cover' }}
-                          />
-                          {product.newArrival && (
-                            <span className="position-absolute top-0 start-0 badge bg-success m-2">New</span>
-                          )}
-                          {!product.inStock && (
-                            <div className="position-absolute top-0 end-0 bottom-0 start-0 d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
-                              <span className="badge bg-danger fs-6 px-3 py-2">Out of Stock</span>
-                            </div>
-                          )}
-                          <div className="product-actions position-absolute top-0 end-0 m-2 d-flex flex-column gap-2">
-                            <button className="btn btn-light btn-sm rounded-circle">
-                              <Heart size={16} />
-                            </button>
-                            <button className="btn btn-light btn-sm rounded-circle">
-                              <Eye size={16} />
-                            </button>
-                          </div>
-                        </div>
-                        <div className="card-body">
-                          <div className="d-flex justify-content-between mb-2">
-                            <span className="badge bg-light text-dark text-capitalize">{getBrandName(product.brand)}</span>
-                            <span className="badge bg-secondary text-capitalize">{getCategoryName(product.category)}</span>
-                          </div>
-                          <h5 className="card-title">{product.name}</h5>
-                          <p className="card-text small text-muted mb-1">
-                            {product.description.length > 60 
-                              ? `${product.description.substring(0, 60)}...` 
-                              : product.description}
-                          </p>
-                          <div className="d-flex justify-content-between align-items-center mt-3">
-                            <span className="fw-bold text-primary">MWK{product.price}</span>
-                            <button className="btn btn-primary btn-sm"
-                            
-                            onClick={() => {
-                                   addItem(product, () => {
-                                    setRedirect(true);
-                                                });
-                                                        }}
-                            >
-                              <ShoppingCart size={16} className="me-1" /> Add to Cart
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="list-group">
-                  {displayedProducts.map(product => (
-                    <div className="list-group-item list-group-item-action border-0 shadow-sm mb-3" key={product._id}>
-                      <div className="row g-0">
-                        <div className="col-md-3 position-relative">
-                          <img 
-                            src={product.photo} 
-                            className="img-fluid rounded-start h-100 w-100"
-                            alt={product.name}
-                            style={{ objectFit: 'cover', maxHeight: '180px' }}
-                          />
-                          {product.newArrival && (
-                            <span className="position-absolute top-0 start-0 badge bg-success m-2">New</span>
-                          )}
-                        </div>
-                        <div className="col-md-9">
-                          <div className="card-body">
-                            <div className="d-flex justify-content-between mb-2">
-                              <div>
-                                <span className="badge bg-light text-dark text-capitalize me-2">{getBrandName(product.brand)}</span>
-                                <span className="badge bg-secondary text-capitalize">{getCategoryName(product.category)}</span>
-                              </div>
-                              <div className="d-flex gap-2">
-                                <button className="btn btn-light btn-sm rounded-circle">
-                                  <Heart size={16} />
-                                </button>
-                                <button className="btn btn-light btn-sm rounded-circle">
-                                  <Eye size={16} />
-                                </button>
-                              </div>
-                            </div>
-                            <h5 className="card-title">{product.name}</h5>
-                            <p className="card-text">{product.description}</p>
-                            <div className="d-flex justify-content-between align-items-center">
-                              <div>
-                                <span className="fw-bold text-primary fs-5">${product.price.toFixed(2)}</span>
-                                <p className="text-muted mb-0 small">
-                                  {product.inStock ? 
-                                    `In Stock (${product.stockQuantity} available)` : 
-                                    'Out of Stock'}
-                                </p>
-                              </div>
-                              <button 
-                                className="btn btn-primary"
-                                disabled={!product.inStock}
-                              >
-                                <ShoppingCart size={16} className="me-1" /> Add to Cart
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
+              
+
+   {/* <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4">
+    {displayedProducts.map(product => (
+      <div className="col" key={product._id}>
+        <div className="card h-100 border-0 shadow-sm product-card">
+      
+          <div className="position-relative" style={{ height: '200px' }}>
+            <img
+              src={product.photo} 
+              className="card-img-top h-100 w-100"
+              alt={product.name}
+              style={{ objectFit: 'cover' }}
+            />
+            {product.newArrival && (
+              <span className="position-absolute top-0 start-0 badge bg-success m-2">New</span>
+            )}
+            {!product.inStock && (
+              <div className="position-absolute top-0 end-0 bottom-0 start-0 d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
+                <span className="badge bg-danger fs-6 px-3 py-2">Out of Stock</span>
+              </div>
+            )}
+            <div className="product-actions position-absolute top-0 end-0 m-2 d-flex flex-column gap-2">
+              <button className="btn btn-light btn-sm rounded-circle">
+                <Heart size={16} />
+              </button>
+              <button className="btn btn-light btn-sm rounded-circle">
+                <Eye size={16} />
+              </button>
+            </div>
+          </div>
+          
+          
+          <div className="card-body d-flex flex-column">
+            <div className="d-flex justify-content-between mb-2">
+              <span className="badge bg-light text-dark text-capitalize">{getBrandName(product.brand)}</span>
+              <span className="badge bg-secondary text-capitalize">{getCategoryName(product.category)}</span>
+            </div>
+            
+            
+            <h5 className="card-title text-truncate">{product.name}</h5>
+            
+        
+            <div style={{ height: '48px', overflow: 'hidden' }}>
+              <p className="card-text small text-muted mb-1">
+                {product.description.length > 60 
+                  ? `${product.description.substring(0, 7)}...` 
+                  : product.description}
+              </p>
+            </div>
+            
+          
+            <div className="d-flex justify-content-between align-items-center mt-auto pt-2">
+              <span className="fw-bold text-primary">MWK{product.price}</span>
+              <button 
+                className="btn btn-primary btn-sm"
+                disabled={!product.inStock}
+                onClick={() => {
+                  addItem(product, () => {
+                    setRedirect(true);
+                  });
+                }}
+              >
+                <ShoppingCart size={16} className="me-1" /> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>  */}
+
+
+<div className="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4">
+  {displayedProducts.map(product => (
+    <div className="col" key={product._id}>
+      <div className="card h-100 border-0 shadow-sm product-card">
+        {/* Image container with fixed height */}
+        <div className="position-relative" style={{ height: '200px' }}>
+          <img
+            src={product.photo} 
+            className="card-img-top h-100 w-100"
+            alt={product.name}
+            style={{ objectFit: 'cover' }}
+          />
+          {product.newArrival && (
+            <span className="position-absolute top-0 start-0 badge bg-success m-2">New</span>
+          )}
+          {!product.inStock && (
+            <div className="position-absolute top-0 end-0 bottom-0 start-0 d-flex justify-content-center align-items-center bg-dark bg-opacity-50">
+              <span className="badge bg-danger fs-6 px-3 py-2">Out of Stock</span>
+            </div>
+          )}
+          <div className="product-actions position-absolute top-0 end-0 m-2 d-flex flex-column gap-2">
+            <button className="btn btn-light btn-sm rounded-circle">
+              <Heart size={16} />
+            </button>
+            <button className="btn btn-light btn-sm rounded-circle">
+              <Eye size={16} />
+            </button>
+          </div>
+        </div>
+        
+        {/* Card body with consistent heights */}
+        <div className="card-body d-flex flex-column">
+          <div className="d-flex justify-content-between mb-2">
+            <span className="badge bg-light text-dark text-capitalize">{getBrandName(product.brand)}</span>
+            <span className="badge bg-secondary text-capitalize">{getCategoryName(product.category)}</span>
+          </div>
+          
+         
+          <h5 className="card-title text-truncate"> <Link href={`/${product._id}`} style={{textDecoration: "none"}} >{product.name}</Link> </h5>
+          
+         
+          <div style={{ height: '48px', overflow: 'hidden' }}>
+            <p className="card-text small text-muted mb-1">
+              {product.description.length > 60 
+                ? `${product.description.substring(0, 60)}...` 
+                : product.description}
+            </p>
+          </div>
+          
+    
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mt-auto pt-2 gap-2">
+            <span className="fw-bold text-primary">MWK{product.price}</span>
+            <button 
+              className="btn btn-primary btn-sm w-100 w-md-auto"
+              disabled={!product.inStock}
+              onClick={() => {
+                addItem(product, () => {
+                  setRedirect(true);
+                });
+              }}
+            >
+              <ShoppingCart size={16} className="me-1" /> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
 
               {/* Pagination */}
               {totalPages > 1 && (

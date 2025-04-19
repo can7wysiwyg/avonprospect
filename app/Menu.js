@@ -81,7 +81,7 @@ export default function Menu() {
             </li>
             
             <li className="nav-item">
-              <Link className="nav-link fw-semibold fs-5 px-3" href="/">New Arrivals</Link>
+              <Link className="nav-link fw-semibold fs-5 px-3" href="/products">Our Shop</Link>
             </li>
           </ul>
           

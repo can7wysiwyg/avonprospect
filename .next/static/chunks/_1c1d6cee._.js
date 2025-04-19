@@ -896,8 +896,8 @@ function Products() {
                                     lineNumber: 347,
                                     columnNumber: 15
                                 }, this),
-                                viewMode === 'grid' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4",
                                     children: displayedProducts.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "col",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -905,27 +905,29 @@ function Products() {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "position-relative",
+                                                        style: {
+                                                            height: '200px'
+                                                        },
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                                 src: product.photo,
-                                                                className: "card-img-top",
+                                                                className: "card-img-top h-100 w-100",
                                                                 alt: product.name,
                                                                 style: {
-                                                                    height: '200px',
                                                                     objectFit: 'cover'
                                                                 }
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 372,
-                                                                columnNumber: 27
+                                                                lineNumber: 445,
+                                                                columnNumber: 11
                                                             }, this),
                                                             product.newArrival && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "position-absolute top-0 start-0 badge bg-success m-2",
                                                                 children: "New"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 379,
-                                                                columnNumber: 29
+                                                                lineNumber: 452,
+                                                                columnNumber: 13
                                                             }, this),
                                                             !product.inStock && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "position-absolute top-0 end-0 bottom-0 start-0 d-flex justify-content-center align-items-center bg-dark bg-opacity-50",
@@ -934,13 +936,13 @@ function Products() {
                                                                     children: "Out of Stock"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/(publico)/products/page.js",
-                                                                    lineNumber: 383,
-                                                                    columnNumber: 31
+                                                                    lineNumber: 456,
+                                                                    columnNumber: 15
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 382,
-                                                                columnNumber: 29
+                                                                lineNumber: 455,
+                                                                columnNumber: 13
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "product-actions position-absolute top-0 end-0 m-2 d-flex flex-column gap-2",
@@ -951,13 +953,13 @@ function Products() {
                                                                             size: 16
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/(publico)/products/page.js",
-                                                                            lineNumber: 388,
-                                                                            columnNumber: 31
+                                                                            lineNumber: 461,
+                                                                            columnNumber: 15
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                                        lineNumber: 387,
-                                                                        columnNumber: 29
+                                                                        lineNumber: 460,
+                                                                        columnNumber: 13
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                                         className: "btn btn-light btn-sm rounded-circle",
@@ -965,28 +967,28 @@ function Products() {
                                                                             size: 16
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/(publico)/products/page.js",
-                                                                            lineNumber: 391,
-                                                                            columnNumber: 31
+                                                                            lineNumber: 464,
+                                                                            columnNumber: 15
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                                        lineNumber: 390,
-                                                                        columnNumber: 29
+                                                                        lineNumber: 463,
+                                                                        columnNumber: 13
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 386,
-                                                                columnNumber: 27
+                                                                lineNumber: 459,
+                                                                columnNumber: 11
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                        lineNumber: 371,
-                                                        columnNumber: 25
+                                                        lineNumber: 444,
+                                                        columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "card-body",
+                                                        className: "card-body d-flex flex-column",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "d-flex justify-content-between mb-2",
@@ -996,41 +998,65 @@ function Products() {
                                                                         children: getBrandName(product.brand)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                                        lineNumber: 397,
-                                                                        columnNumber: 29
+                                                                        lineNumber: 472,
+                                                                        columnNumber: 13
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         className: "badge bg-secondary text-capitalize",
                                                                         children: getCategoryName(product.category)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                                        lineNumber: 398,
-                                                                        columnNumber: 29
+                                                                        lineNumber: 473,
+                                                                        columnNumber: 13
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 396,
-                                                                columnNumber: 27
+                                                                lineNumber: 471,
+                                                                columnNumber: 11
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
-                                                                className: "card-title",
-                                                                children: product.name
-                                                            }, void 0, false, {
+                                                                className: "card-title text-truncate",
+                                                                children: [
+                                                                    " ",
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                        href: `/${product._id}`,
+                                                                        style: {
+                                                                            textDecoration: "none"
+                                                                        },
+                                                                        children: product.name
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/(publico)/products/page.js",
+                                                                        lineNumber: 477,
+                                                                        columnNumber: 53
+                                                                    }, this),
+                                                                    " "
+                                                                ]
+                                                            }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 400,
-                                                                columnNumber: 27
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "card-text small text-muted mb-1",
-                                                                children: product.description.length > 60 ? `${product.description.substring(0, 60)}...` : product.description
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 401,
-                                                                columnNumber: 27
+                                                                lineNumber: 477,
+                                                                columnNumber: 11
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "d-flex justify-content-between align-items-center mt-3",
+                                                                style: {
+                                                                    height: '48px',
+                                                                    overflow: 'hidden'
+                                                                },
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "card-text small text-muted mb-1",
+                                                                    children: product.description.length > 60 ? `${product.description.substring(0, 60)}...` : product.description
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/(publico)/products/page.js",
+                                                                    lineNumber: 481,
+                                                                    columnNumber: 13
+                                                                }, this)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/(publico)/products/page.js",
+                                                                lineNumber: 480,
+                                                                columnNumber: 11
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mt-auto pt-2 gap-2",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         className: "fw-bold text-primary",
@@ -1040,11 +1066,12 @@ function Products() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                                        lineNumber: 407,
-                                                                        columnNumber: 29
+                                                                        lineNumber: 490,
+                                                                        columnNumber: 13
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        className: "btn btn-primary btn-sm",
+                                                                        className: "btn btn-primary btn-sm w-100 w-md-auto",
+                                                                        disabled: !product.inStock,
                                                                         onClick: ()=>{
                                                                             (0, __TURBOPACK__imported__module__$5b$project$5d2f$helpers$2f$core$2f$CartFuncs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addItem"])(product, ()=>{
                                                                                 setRedirect(true);
@@ -1056,252 +1083,43 @@ function Products() {
                                                                                 className: "me-1"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                                lineNumber: 416,
-                                                                                columnNumber: 31
+                                                                                lineNumber: 500,
+                                                                                columnNumber: 15
                                                                             }, this),
                                                                             " Add to Cart"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                                        lineNumber: 408,
-                                                                        columnNumber: 29
+                                                                        lineNumber: 491,
+                                                                        columnNumber: 13
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 406,
-                                                                columnNumber: 27
+                                                                lineNumber: 489,
+                                                                columnNumber: 11
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                        lineNumber: 395,
-                                                        columnNumber: 25
+                                                        lineNumber: 470,
+                                                        columnNumber: 9
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                lineNumber: 370,
-                                                columnNumber: 23
+                                                lineNumber: 442,
+                                                columnNumber: 7
                                             }, this)
                                         }, product._id, false, {
                                             fileName: "[project]/app/(publico)/products/page.js",
-                                            lineNumber: 369,
-                                            columnNumber: 21
+                                            lineNumber: 441,
+                                            columnNumber: 5
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/(publico)/products/page.js",
-                                    lineNumber: 367,
-                                    columnNumber: 17
-                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "list-group",
-                                    children: displayedProducts.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "list-group-item list-group-item-action border-0 shadow-sm mb-3",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "row g-0",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "col-md-3 position-relative",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                                src: product.photo,
-                                                                className: "img-fluid rounded-start h-100 w-100",
-                                                                alt: product.name,
-                                                                style: {
-                                                                    objectFit: 'cover',
-                                                                    maxHeight: '180px'
-                                                                }
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 430,
-                                                                columnNumber: 27
-                                                            }, this),
-                                                            product.newArrival && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "position-absolute top-0 start-0 badge bg-success m-2",
-                                                                children: "New"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 437,
-                                                                columnNumber: 29
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/app/(publico)/products/page.js",
-                                                        lineNumber: 429,
-                                                        columnNumber: 25
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "col-md-9",
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "card-body",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "d-flex justify-content-between mb-2",
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                    className: "badge bg-light text-dark text-capitalize me-2",
-                                                                                    children: getBrandName(product.brand)
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                                    lineNumber: 444,
-                                                                                    columnNumber: 33
-                                                                                }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                    className: "badge bg-secondary text-capitalize",
-                                                                                    children: getCategoryName(product.category)
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                                    lineNumber: 445,
-                                                                                    columnNumber: 33
-                                                                                }, this)
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/app/(publico)/products/page.js",
-                                                                            lineNumber: 443,
-                                                                            columnNumber: 31
-                                                                        }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "d-flex gap-2",
-                                                                            children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                                    className: "btn btn-light btn-sm rounded-circle",
-                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Heart$3e$__["Heart"], {
-                                                                                        size: 16
-                                                                                    }, void 0, false, {
-                                                                                        fileName: "[project]/app/(publico)/products/page.js",
-                                                                                        lineNumber: 449,
-                                                                                        columnNumber: 35
-                                                                                    }, this)
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                                    lineNumber: 448,
-                                                                                    columnNumber: 33
-                                                                                }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                                    className: "btn btn-light btn-sm rounded-circle",
-                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$eye$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Eye$3e$__["Eye"], {
-                                                                                        size: 16
-                                                                                    }, void 0, false, {
-                                                                                        fileName: "[project]/app/(publico)/products/page.js",
-                                                                                        lineNumber: 452,
-                                                                                        columnNumber: 35
-                                                                                    }, this)
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                                    lineNumber: 451,
-                                                                                    columnNumber: 33
-                                                                                }, this)
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/app/(publico)/products/page.js",
-                                                                            lineNumber: 447,
-                                                                            columnNumber: 31
-                                                                        }, this)
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                    lineNumber: 442,
-                                                                    columnNumber: 29
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
-                                                                    className: "card-title",
-                                                                    children: product.name
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                    lineNumber: 456,
-                                                                    columnNumber: 29
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "card-text",
-                                                                    children: product.description
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                    lineNumber: 457,
-                                                                    columnNumber: 29
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "d-flex justify-content-between align-items-center",
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                    className: "fw-bold text-primary fs-5",
-                                                                                    children: [
-                                                                                        "$",
-                                                                                        product.price.toFixed(2)
-                                                                                    ]
-                                                                                }, void 0, true, {
-                                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                                    lineNumber: 460,
-                                                                                    columnNumber: 33
-                                                                                }, this),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                                    className: "text-muted mb-0 small",
-                                                                                    children: product.inStock ? `In Stock (${product.stockQuantity} available)` : 'Out of Stock'
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                                    lineNumber: 461,
-                                                                                    columnNumber: 33
-                                                                                }, this)
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/app/(publico)/products/page.js",
-                                                                            lineNumber: 459,
-                                                                            columnNumber: 31
-                                                                        }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                            className: "btn btn-primary",
-                                                                            disabled: !product.inStock,
-                                                                            children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__["ShoppingCart"], {
-                                                                                    size: 16,
-                                                                                    className: "me-1"
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                                    lineNumber: 471,
-                                                                                    columnNumber: 33
-                                                                                }, this),
-                                                                                " Add to Cart"
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/app/(publico)/products/page.js",
-                                                                            lineNumber: 467,
-                                                                            columnNumber: 31
-                                                                        }, this)
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/app/(publico)/products/page.js",
-                                                                    lineNumber: 458,
-                                                                    columnNumber: 29
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/app/(publico)/products/page.js",
-                                                            lineNumber: 441,
-                                                            columnNumber: 27
-                                                        }, this)
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/(publico)/products/page.js",
-                                                        lineNumber: 440,
-                                                        columnNumber: 25
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/(publico)/products/page.js",
-                                                lineNumber: 428,
-                                                columnNumber: 23
-                                            }, this)
-                                        }, product._id, false, {
-                                            fileName: "[project]/app/(publico)/products/page.js",
-                                            lineNumber: 427,
-                                            columnNumber: 21
-                                        }, this))
-                                }, void 0, false, {
-                                    fileName: "[project]/app/(publico)/products/page.js",
-                                    lineNumber: 425,
-                                    columnNumber: 17
+                                    lineNumber: 439,
+                                    columnNumber: 1
                                 }, this),
                                 totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                                     className: "mt-4",
@@ -1322,17 +1140,17 @@ function Products() {
                                                                 size: 16
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 489,
+                                                                lineNumber: 516,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/products/page.js",
-                                                            lineNumber: 488,
+                                                            lineNumber: 515,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                        lineNumber: 487,
+                                                        lineNumber: 514,
                                                         columnNumber: 23
                                                     }, this),
                                                     getPaginationNumbers().map((page, index)=>page === '...' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1342,12 +1160,12 @@ function Products() {
                                                                 children: "..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 496,
+                                                                lineNumber: 523,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, `ellipsis-${index}`, false, {
                                                             fileName: "[project]/app/(publico)/products/page.js",
-                                                            lineNumber: 495,
+                                                            lineNumber: 522,
                                                             columnNumber: 27
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             className: `page-item ${currentPage === page ? 'active' : ''}`,
@@ -1357,12 +1175,12 @@ function Products() {
                                                                 children: page
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 503,
+                                                                lineNumber: 530,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, `page-${page}`, false, {
                                                             fileName: "[project]/app/(publico)/products/page.js",
-                                                            lineNumber: 499,
+                                                            lineNumber: 526,
                                                             columnNumber: 27
                                                         }, this)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1375,28 +1193,28 @@ function Products() {
                                                                 size: 16
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                                lineNumber: 515,
+                                                                lineNumber: 542,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/(publico)/products/page.js",
-                                                            lineNumber: 514,
+                                                            lineNumber: 541,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/(publico)/products/page.js",
-                                                        lineNumber: 513,
+                                                        lineNumber: 540,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/(publico)/products/page.js",
-                                                lineNumber: 486,
+                                                lineNumber: 513,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/(publico)/products/page.js",
-                                            lineNumber: 485,
+                                            lineNumber: 512,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1409,13 +1227,13 @@ function Products() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/(publico)/products/page.js",
-                                            lineNumber: 520,
+                                            lineNumber: 547,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(publico)/products/page.js",
-                                    lineNumber: 484,
+                                    lineNumber: 511,
                                     columnNumber: 17
                                 }, this)
                             ]
